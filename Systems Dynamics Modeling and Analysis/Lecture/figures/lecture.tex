@@ -1,0 +1,154 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage{amsmath, amssymb}
+\usepackage{fancyhdr}
+%\setlength{\headheight}{15pt}
+\usepackage{geometry}
+\geometry{margin=1.5in}
+\usepackage[Rejne]{fncychap}
+\pagestyle{fancy}
+\usepackage{color}
+\usepackage{blindtext}
+\usepackage{import}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{trfsigns}
+\renewcommand{\chaptername}{Lecture}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{figures}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+
+
+\title{Systems Dynamics Modeling and Analysis}
+\author{Adam Carrera}
+\date{January 19, 2021}
+\lhead{Week \thepart}
+
+\begin{document}
+  \maketitle
+  \part{Week 1}
+  \chapter{Introduction}
+
+  \section{Syllabus and Textbook}
+
+  Instructor Information:
+  \begin{enumerate}
+    \item Professor Email: Justin.Koeln@UTDallas.edu
+    \item Office hours by appointment
+    \item TA Email Sahand.HadizadehKafash@UTdallas.edu
+    \item Office hours Friday 1:00 pm - 3:00 and by appointment
+  \end{enumerate}
+
+  \noindent
+  Textbook: System Dynamics, William Palm 3rd Edition. Chapters 1-9 (not in that order), balance of math, theory, modeling, and application.
+
+  \section{Homework}
+
+  Approximately one assignment per week, due Tuesday before class. No late credit for homework and the lowest score will be dropped. Points will be assigned based on the rubric. Each lecture will have a quiz associated with it, due before the start of next class. The quiz is meant to test your understanding of the material.
+
+  \section{Exam Schedule}
+
+  \begin{itemize}
+    \item Exam 1: Week of Thursday, Feb. 25
+    \item Exam 2: Week of Thursday, Apr. 8
+    \item Final Exam: Week of Monday, May 10
+  \end{itemize}
+
+  Open book, open notes exams with a time limit. A calculator is allowed and a formula sheet is provided. Additionally, a sheet of equations that we are expected to know if provided as well.
+
+  \begin{table}
+    \centering
+    \caption{Grading Criteria}
+    \label{tab:table1}
+    \begin{tabular}{c c}
+      Homework & 30\% \\
+      Participation & 10\% \\
+      Midterm & 15\% each \\
+      Final & 30\%
+    \end{tabular}
+  \end{table}
+
+  \section{Quiz 1}
+
+  \begin{enumerate}
+    \item What year are you in school?
+    \item Have you taken systems and controls?
+    \item Do you have access to Matlab/Simulink
+    \item What is the most important thing you want to remember from this lecture?
+    \item What are your goals for the course? ..etc
+  \end{enumerate}
+
+  \section{Systems}
+
+  A system is a combination of elements intended to act togehter to accomplish an objective. A systems point of view focuses on how the connections between elements influence overall behavior. We can accept a less-detailed description of individual elements to understand the entire system. We want to look at the general behavior of the system as it evolves over time.
+
+  \newpage
+  \section{Inputs and Outputs}
+
+  \begin{enumerate}
+    \item Input is a cause $ u. $
+    \item Output is an effect $ y. $
+    \item System dynamics are goverened by input-output relationships $ y = f(t, u). $
+  \end{enumerate}
+
+  What is $ y = f(t, u). $ and how can we approximate it?
+
+  \section{Dynamics}
+
+  Mechaincal Engineers study how things behave as a function of location with PDE's.
+
+  \[
+      \frac{\partial g(x)}{\partial x} = f(x)
+    .\]
+
+  We are more interested in how a system behaves as a function of time, which gives us ODEs $ \frac{dx}{dt} = f(x). $ A static relationship means that the current output only depends on the current input (no dynamics, algebraic relationsship) $ y = f(u(t)). $ A dynamic relationship means that the current output depends on past inputs. Check out 3b1b video on differential equations.
+
+  \[
+      \frac{dx}{dt}(t) = f(x(t), u(t)), \quad y(t) = g(x(t))
+    .\]
+
+  \section{Modeling}
+
+  A model is a mathematical description of a systems behavior as a function of time. Modeling is to understand the problem, apply simplifying assumptions, and apply appropriate fundamental principles. We need to be able to solve that model for the behavior of that system. This can be done by hand for simple systems. If the model is too complex, a numerical approach may be required. Our goal is to make the model simple enough to work with but realistc enough to trust.
+
+  \newpage
+
+  \subsection{Potato Example}
+
+  We want to be able to heat a potato in 2 minutes with a microwave. We could use a complex model.
+
+  \begin{enumerate}
+    \item Capture unique shape
+    \item Exact thermal properties
+    \item FEA Analysis for temperature distribution
+  \end{enumerate}
+
+  We could also use a simple model.
+
+  \begin{enumerate}
+    \item Potatoe is a sphere with thermal properties of water
+    \item We can solve this problem really quickly using Ch.7
+  \end{enumerate}
+
+  The complex model could take days or weeks, but the simple model could take a few minutes. The results could be within 10\% of each other!
+
+  \section{Modeling Ethics}
+
+  We will also discuss modeling ethics. A lot of engineering decisions are made from models. We will focus on understanding the model's limits, what they cannot predict, and what how "simulations are doomed to succeed".
+
+
+
+
+
+
+
+\end{document}
