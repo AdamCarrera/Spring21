@@ -1,0 +1,107 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage{amsmath, amssymb}
+\usepackage{fancyhdr}
+%\setlength{\headheight}{15pt}
+\usepackage{geometry}
+\geometry{margin=1.5in}
+\usepackage[Rejne]{fncychap}
+\pagestyle{fancy}
+\usepackage{color}
+\usepackage{blindtext}
+\usepackage{import}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{trfsigns}
+\renewcommand{\chaptername}{Lecture}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{figures}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\title{Systems and Controls Lab}
+\author{Adam Carrera}
+\date{January 19, 2021}
+\lhead{Week \thepart}
+
+\begin{document}
+  \maketitle
+  \tableofcontents
+  \part{Week 1}
+
+  \chapter{Introduction}
+
+  \section{Contact Info}
+
+  \begin{enumerate}
+    \item Dr. Koeln, Justin.Koeln@UTDallas.edu (Office hours by appointment)
+    \item Navad Hashemi, Navid.Hashemi@UTDallas.edu (TR 3:00pm - 5:00 pm, or by apointment)
+    \item Fenglin Zhou, fxz160030@UTDallas.edu (TR 1:00pm - 3:00pm, or by appointment)
+  \end{enumerate}
+
+  TA's office hours are to help with Prelabs, Lab Procedures and Lab Reports.
+
+  \section{Objectives \& Structure}
+
+  Lab course for MECH 4310. Focused on Modeling of dynamic systems, design of controllers, and analysis/report of results. Weekly lectures will be posted on Monday mornings to review necessary theory for the lab. There will be 5 expereiments, roughly every other week.
+
+  \begin{enumerate}
+    \item Prelabs - use theory and calculates to prepare for the lab
+    \item Lab Procedures - Instructions in Lab Manual (Matlab / Simulink)
+    \item Lab Reports - focus on analysis of results and technical writing
+  \end{enumerate}
+
+  \paragraph{NOTE:} Check elearning frequently for course materials, announcements, etc.
+
+  The Lab Manual will be provided on elearning. It includes prelabs and lab report assignments, procedures, supplemental theory, and experimental system User's guides (real world equipement that the experiments are based on). The instructors have provided Matlab/Simulink files for reference on elearning.
+
+  \section{Typical Schedule}
+
+  Bi-weekly structure for each lab. Two lectures per lab, posted on Mondays. The prelab is due by Friday 5pm the week before the corresponding lab. Next week you will complete the lab, following the Lab Manual procedures. The Lab Report is due by 5pm the following week.
+
+  \section{Grading}
+
+  See Table \ref{tab:table1}.
+
+  \begin{table}
+    \centering
+    \caption{Grading}
+    \label{tab:table1}
+    \begin{tabular}{c c}
+      Participation & 20\% \\
+      Prelabs & 40\% \\
+      Lab Reports & 40\%
+    \end{tabular}
+  \end{table}
+
+  \paragraph{NOTE:} These assignments are individual. Collaboration is allowed but copying code or reports is considered cheating.
+
+  \subsection{Participation}
+
+  Most lectures will end with questions to review material in that lecture. The answers will be discussed at the beginning of the next lecture. Used to test understanding and provide feedback to the professor. Will be posted in elearning.
+
+  \subsection{Prelabs}
+
+  Individual assignment posted on elearning provided in the lab manual. Due Friday at 5pm before the lab. See the schedule and grading rubric. Prelabs are equally important as the Lab Reports. Ask the TA's or the professor for help if you need it!
+
+  \subsection{Lab Report}
+
+  Assignment provided in Lab Manual on eLearning. Individual assignment. Due by 5pm on Friday the week after the lab. The Lab Reports must always be typed. See the grading rubric on elearning and tips for technical writing on elearning.
+
+  \section{TA Assignments}
+
+  The TA's grade different labs, but you may reach out to either of them for help. See the breakdown in elearning.
+
+  \section{Matlab/Simulink}
+
+  Self paced activity posted next week to learn more about Matlab/Simulink. Ask the professors or TA's for help if you are stuck with matlab or simulink.
+
+
+\end{document}
