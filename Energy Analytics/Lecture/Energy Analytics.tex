@@ -1,0 +1,81 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage{amsmath, amssymb}
+\usepackage{fancyhdr}
+%\setlength{\headheight}{15pt}
+\usepackage{geometry}
+\geometry{margin=1.5in}
+\usepackage[Rejne]{fncychap}
+\pagestyle{fancy}
+\usepackage{color}
+\usepackage{blindtext}
+\usepackage{import}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{trfsigns}
+\renewcommand{\chaptername}{Lecture}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\newcommand{\incfig}[2][1]{%
+  \def\svgwidth{#1\columnwidth}
+  \import{figures}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+
+
+\title{Energy Analytics}
+\author{Adam Carrera}
+\date{January 20, 2021}
+\lhead{Week \thepart}
+
+\begin{document}
+  \maketitle
+  \tableofcontents
+  \part{Week 1}
+  \chapter{Introduction}
+  \section{Syllabus}
+  The course syllabus is available on eLearning and coursebook. Professor and TA office hours are in MSTeams. Every Tuesday and Thursday 10 am - 11 am and 3 pm - 4 pm. Lectures will be posted Mondays and Wednesdays on MS Stream.
+
+  \subsection{Homework}
+  Homeworks are coding assingments that are submitted to elearning. Schedule is available in the syllabus.
+
+  \subsection{Exams}
+  The final exam will be open book. It will be assigned and submitted thorugh elearning.
+
+  \subsection{Final Project}
+  Recorded presentation and report through MS Teams and eLearning.
+
+  \subsection{Course Description}
+  Understand the basic concept of analytics, including descripting analytics and predictive analytics. Understand applications of analytics in energy industry. Know how to use mathematical software and other commercial packages. Know how to develop load, price, wind and solar forecasts.
+
+  \section{Discussion}
+
+  \subsection{Who makes up the most emissions?}
+
+    China takes up the biggest share of global emissions at about 30\%. Electricity and heat make up 24.9\% of world greenhouse gas emissions (highest portion). There are several end uses for electricity and heat like buildings, refining, food. These processes create lots of $CO_2$. The majority of CO2 emissions in the US come from the Electricity sector, followed by transportation, and industry.
+
+  \subsection{How do renewable technologies compare?}
+
+    Renewable and carbon neutral technologies are utilized a lot less than coal and natural gas. Coal use has gone down from about 50\% of electricity generation in the US to 32.3\% (less than one third!). Natural gas however, has increased from 21.4\% to 32.3\%. Nuclear energy has remained constant throughout the years, due to the effrot required to build the plant. Hydropower has also remained constant through out the years. Other renewable sources are growing very fast (solar, wind power, biofuels, etc).
+
+  \subsection{Wind and Solar Energy}
+
+    Wind has the higest capactity of non-hydro renewables. By the end of 2018 the world was generating 591 Gigawatts of wind energy. Wind energy has also been growing very fast in the US as well. In Q3 2019 the US generated 100,128 MW, with Texas leading at ~27,000 MW. However in some parts of the US, the conditions are not suitable for wind turbines.
+
+    PV (solar energy storage) has been steadily growing in the US as well. PV installations are split between Residential, Non-residential, and Utility. Solar energy resources vary with location as well.
+
+  \subsection{What are the biggest drivers of renewable installations and penetration rates?}
+    Policy is a big driver, states have different renewable portfolio standard targets. The costs to implement renewable energy has been decreasing over the years. Solar is a little more expensive than wind, but they are both becoming competitive with non-renewables. Utility-Scale PV costs have droped from \$5.52 per W to \$1.13 per W.
+
+  \section{Renewables Integration}
+    Power generation and energy consumption must be balanced. This balance becomes more challenging with renewables, because you cannot control how much wind blows or how much the sun shines. 
+
+
+
+
+\end{document}
