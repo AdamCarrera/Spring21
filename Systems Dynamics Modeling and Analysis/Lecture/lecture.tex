@@ -163,4 +163,370 @@
 
 
 
+
+  \chapter{Mathmatical Foundation}
+
+  \section{Objectives}
+
+  \begin{enumerate}
+    \item Review Complex numbers
+    \item Understand ODEs
+    \item Laplace Transforms
+  \end{enumerate}
+
+  \section{Complex Numbers}
+  $ \sqrt{-1} \equiv i, or j. $ We will use $ j. $ In systems, i is used for current, j is for the complex number. Numbers of the form
+
+  \[
+      z = x + iy
+    .\]
+
+  are complex numbers in rectangular form. x is the real part, y is the imaginary part. Put the figure of the complex plane here.
+
+  \paragraph{NOTE:} the imaginary part is $ y. $ not $ jy. $
+
+  Some properties of complex numbers are the magnitude and argument.
+  \[
+      |z| = \sqrt{x ^2 + y ^2}, \quad \theta = \arctan{ \left( \frac{y}{x} \right)}
+    .\]
+
+  The complex conjugate is the reflection of a complex number through the real axis.
+
+  \[
+      \bar{z} = x = jy
+    .\]
+
+  Properties:
+
+  \[
+      z + \bar{z} = 2 Re(z)
+    .\]
+
+  \subsection{Euler's Formula}
+
+  \[
+      e^{j\theta} = \cos{\theta} + j\sin{\theta}
+    .\]
+  This leads to,
+
+  \begin{align}
+    e^{-j\theta} &= \cos{\theta} - j\sin{\theta} \\
+    \cos{\theta} &= \frac{e^{j\theta} - e^{j\theta}}{2}
+  \end{align}
+
+  \subsection{Polar Form}
+
+  Define magnitude
+  \[
+      r = |z| = \sqrt{x ^2 + y ^2}
+    .\]
+
+  \[
+      \theta = \arctan{\frac{y}{x}}
+    .\]
+
+    \[
+        x = r\cos{\theta}, y = r\sin{\theta}
+      .\]
+
+  \subsection{Complex Algebra}
+
+  Addition and subtraction are easily done in rectangular form.
+
+  \[
+      z_{1} \pm z_{2} = \left( x_1 + jy_1 \right) \pm \left( x_2 + jy_2 \right)
+    .\]
+
+  \noindent
+  Multiplication and division are easily done in polar form.
+
+
+  \subsection{Examples}
+
+  Rectangular to Polar. Remember to think about quadrants!
+
+  \begin{align}
+    z &= 1 - j \\
+    |z| &= \sqrt{1 ^2 + (-1 ^2)} \\
+    \theta &= \arctan{\frac{-1}{1}} = 45^{\circ}
+    z &= \sqrt{2} e^{-j \frac{\pi}{4}}
+  \end{align}
+
+  Division, can be done in rectangular form by multiplying by the complex conjugate. Can also be done in polar form.
+
+  \begin{align}
+    \frac{3 + 2j}{1 - 3j} &= \frac{3 + 2j}{1 - 3j} * \frac{3 + 2j}{1 + 3j} \\
+    \frac{3 - 6 + 2j + 9j}{1 + 9} &= \frac{-3 + 11j}{10}
+  \end{align}
+
+  Powers, $ z = 1 - j, z ^2 = ?. $
+  \begin{align}
+    z &= \sqrt{2}e^{-j \frac{\pi}{4}} \\
+  \end{align}
+
+  In fact,
+
+  \[
+      z^n = re^{j\theta}n = r^n e^{jn\theta}
+    .\]
+
+  \subsection{Complex Functions}
+
+  \[
+      z_1 \rightarrow G(z_1) \rightarrow z_2
+    .\]
+
+  Example,
+
+  \[
+      G(z_1) = \frac{z_1 + 2}{z_1^2 + z_1 + 1}
+    .\]
+
+  let $z_1 = j2$. We can evaulate the function by plugging in $ j2. $ for $ z_1. $
+
+  \section{ODEs - Basics}
+
+  Independent variable is time, $ t. $ The dependent variable is usually denoted as $ x. $
+
+  Derivatives,
+
+  \[
+      \dot{x} = \frac{dx}{dt}, \quad \ddot{x} = \frac{d^2 x}{dt^2},  \quad \ldots \quad x^{(n)} = \frac{d^n x}{dt^n}
+    .\]
+
+    Standard form is to have all functions of the dependent variable on the LHS, all isolated constants and functions of time on the RHS. The RHS is considered the input or the forcing function. If the RHS = 0 the equation is homogeneous. If not, it is nonhomogeneous.
+
+    The goal is to solve for $ x(t). $ This gives us the solution or the response.
+
+    \subsection{Examples of Standard Form}
+
+    \begin{align}
+      \ddot x + 3 \dot x + 5x &= 0 \\
+      \ddot x + 3\dot x x +5 x ^2 &= 5 \sin{2t} \\
+      \dot x &= 6 + 5 \sin t
+    \end{align}
+
+    \subsection{Initial COnditions}
+
+
+    When solving an ODE, there is a family of solutions. Example:
+
+    \[
+        2 \dot x + 6x = 3 \quad x(t) = Ce^{-3t} + 0.5
+      .\]
+    you could choose many values for C and still have a solution to the equation. No matter the value of C, $ x(t). $ still approaches 0.5. Include the graph here. Without loss of generality, we assume that the system starts at $ t = 0. $ Determining C requires knowledge of x at some time t. Commonly, the initial condition is given as $ x(t_0) = x_0. $
+
+    \subsection{Classification of ODEs}
+
+    Linearity generally means that $ f(x + y) = f(x) + f(y). $ Linear ODEs contain only linear functions of the dependent variable and its derivatives. Nonlinear functions of the independent variable do not make an ODE nonlinear.
+
+    The order is the highest derivative of the dependent variable (double dot, 2nd order). A coupled set of ODEs can be reducded to a single ODE whose order is the sum of the oder of the individual ODEs.
+
+    Example:
+
+    \begin{align}
+      3 \dot{x_1} + 5 \dot{x_2} - 7 x_2 &= 5 \\
+      \dot x_2 + 4 x_1 + 6 x_2 &= 0
+    \end{align}
+
+    Add the sum of the orders of the two dependent variables. 1 order from x1 and 1 order from x2. This is a second order system, which could be represented by a single 2nd order ODE.
+
+    \subsection{Combining Coupled ODEs}
+    We have two equations.
+    \begin{align}
+      \dot x_1 + 4x_2 &= 3 \\
+      2 \dot x_2 + x_1 &= 5
+    \end{align}
+
+    Solution,
+
+    \[
+        \dot x_1 + 4x_2 = 3 \Rightarrow \ddot x_1 + 4 x_2 = 0
+      .\]
+
+    Rearrange the second equation for x2 and substitute.
+
+    \section{Solution}
+
+    \subsection{Direct Integration}
+
+    With some first order ODEs, we can rearrange as
+
+    \[
+        \frac{dx}{dt} = f(t)
+      .\]
+    and integrate both sides.
+
+    \[
+        \int{dx} = \int{f(t) dt}
+      .\]
+
+    \[
+        x(t) = x(t_0) + \int{f(t)dt}
+      .\]
+
+    Example $ \dot x = 5. $
+
+    \subsection{Seperation of Variables}
+    Doesn't show up that often in this class.
+    \[
+        \frac{dx}{dt} = g(t) f(t)
+      .\]
+
+    \subsection{Trial-Solution Method}
+
+    For any nth order linear ODE, there is a response $ x(t) = x_h + x_p. $ The response is the sum of the homogeneous solution and the particular solution. The sum of the internal behavior and the external behavior.
+
+    Assume the solution is of the form $ x(t) = e^{\lambda t}. $ Take the derivative of $ x(t). $ n times and substitute into the ODE. Note that $ e^{\lambda t} \neq 0. $ This gives us the characteristic equation.
+
+    \[
+        (\lambda - \lambda_1)( \ldots ) = 0
+      .\]
+
+
+
+
+  \part{Week 2}
+
+  \chapter{ODEs and Laplace Transforms}
+
+  \section{Trial Solution}
+
+  \subsection{Characteristic Equation}
+  Plug in the form of the solution
+  \[
+      x(t) = e^{\lambda t}
+    .\]
+  \subsection{Example}
+  \begin{align}
+    \ddot x + 10 \dot x + 9x &= 5 \sin 2t \\
+    \ddot x + 10 \dot x + 9x &= 0 \\
+    \lambda ^2 + 10 \lambda + 9 &= 0 \\
+    (\lambda + 9)(\lambda + 1) &= 0
+  \end{align}
+
+  The roots are distinct. -9, -1. The roots can be repeated, or complex as well!
+
+  \subsection{Types of Roots}
+  If all roots are distinct, there will be n different coefficients.
+
+  \[
+      \dot x + ax = 0, \quad x(t_0 = 0) = 0
+    .\]
+  \[
+      (\lambda + a) e^{\lambda t} = 0, \quad \lambda = -a
+    .\]
+
+  \[
+      x_0 = C e^{-a*0} = C, \quad x(t) = x_0 e^{-at}
+    .\]
+  If we have repeated roots, the coefficients gain increasing powers of time.
+
+  \[
+      x(t) = C_1 e^{\lambda t} + C_2 t e^{\lambda t} \ldots
+    .\]
+
+  Complex roots can be handled using Euler's formula.
+
+  \[
+      \lambda_{i, i+1} = \sigma \pm j\omega
+    .\]
+
+  \[
+      x(t) = \ldots + C_i e^{\sigma + j\omega} + C_{i + 1} e^{\sigma - j\omega} + \ldots
+    .\]
+  Using eulers formula,
+
+  \[
+      x(t) = \ldots + \left( C'_i \cos \omega t + C'_{i+1} \sin \omega t \right) e^{\sigma t} + \ldots
+    .\]
+  The prime means that the coefficient is different from the line above. This solution is going to be oscillating.
+
+  \section{Forced Response}
+
+  Just discussed how to obtain $ x_h. $ Use Method of Undetermined Coefficients to get $ x_p. $ Choose a solution form based on the term in $ f(t). $
+
+  \begin{table}
+    \caption{Solution Forms}
+    \centering
+    \begin{tabular}{c  c}
+      Term in $ f(t). $ & Form of solution $ x_p(t). $ \\
+      $ A_n^t + \ldots + A_1 t + A_0. $  & $ C_n^t + \ldots + C_1 t + C_0. $\\
+      $ Ae^{at}. $ & $ Ce^{at}. $ \\
+      $ A\sin \omega t$ & $ C\sin \omega t . $ \\
+      $ Ae^{at}\sin \omega t. $ & $ Ce^{at}\sin \omega t. $
+    \end{tabular}
+    \label{tab:forcedresponse}
+
+  \end{table}
+  Note, the form of the forcing function always shows up i nthe form of the solution (property of linear ODEs) See Table \ref{tab:forcedresponse}
+
+  Substitute assumed forms of $ x_p. $ int othe ODe and determine the coefficients, then go back and solve the homogeneous problem seperately. Add the two solutions with linear superpositions. Finally, find the coefficients to the homogeneous solution.
+
+
+  \newpage
+
+  \section{Laplace Transforms}
+  Finding solutions in the time domain is hard. While using laplace transforms takes longer, the solution is generally easier to find (algebra over calculus). The laplace transform is a linear operator, so it is useful for
+
+  \begin{enumerate}
+    \item Nonhomogeneous equations with a forcing function of time
+    \item Sets/systems of equations
+  \end{enumerate}
+
+  Linear ODEs become algebraic relationships, and convolution becomes multiplication.
+
+  \begin{equation}
+    F(s) = \mathcal{L}\{f(t)\} = \int_{0-}^{\infty} e^{st} f(t)dt
+  \end{equation}
+
+  Assume $ f(t) = 0, t < 0. $ We tend to start caring about what happens at time $ t = 0. $ However, interesting "stuff" happens at time $ t = 0. $
+
+  \begin{enumerate}
+    \item "stuff" - step changes, impulses
+    \item We need a way to denote before and after this stuff happens
+  \end{enumerate}
+
+  Let $ \epsilon, $ be an infitessimally small unit of time. $ 0-, 0+ $ occur $ \epsilon $ seconds before and after time $ t = 0. $ Unless stated explicitly, we assume $ f(t) = 0 \forall t < 0. $
+
+  \subsection{Inverse Laplace Transform}
+
+  The definition of inverse laplace tranforms is complex, so we use lookup tables in the book.
+
+  Some common examples,
+
+  \[
+      f(t) = e^{-at} \iff F(s) = \frac{1}{s + a}, \quad a > 0
+    .\]
+
+  \subsection{Properties}
+
+  Laplace Transforms are linear. Inverse Laplace transforms too.
+
+  \[
+      \mathcal{L}\{af(t) + bg(t)\} = a \mathcal{L}\{f(t)\} + b \mathcal{L}\{g(t)\}
+    .\]
+
+  This property does NOT hold for multiplication. Instead, multiplication corresponds to a convolution integral in the time domain.
+
+  \[
+      F(s)G(s) = \mathcal{L}\left\{\int_0^t f(t)g(t - \tau) d\tau\right\}
+    .\]
+
+  Derivatives,
+
+  \[
+      \mathcal{L}\{\dot{f(t)}\} = sF(0) - f(0)
+    .\]
+
+  \[
+      \mathcal{L}\{\ddot{f(t)}\} = s ^2 - sf(0) - \dot{f(0)}
+    .\]
+
+  Integrals,
+
+  \[
+      \mathcal{L}\left\{\int f(\tau)d \tau \right\} = \frac{1}{s} F(s)
+    .\]
+
 \end{document}
