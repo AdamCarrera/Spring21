@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.12)  20 JAN 2021 18:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.12)  26 JAN 2021 19:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -119,7 +119,29 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layouthoffset=\dimen154
 \Gm@layoutvoffset=\dimen155
 \Gm@dimlist=\toks21
-) (c:/texlive/2020/texmf-dist/tex/latex/fncychap/fncychap.sty
+) (c:/texlive/2020/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count267
+\lst@gtempboxa=\box49
+\lst@token=\toks22
+\lst@length=\count268
+\lst@currlwidth=\dimen156
+\lst@column=\count269
+\lst@pos=\count270
+\lst@lostspace=\dimen157
+\lst@width=\dimen158
+\lst@newlines=\count271
+\lst@lineno=\count272
+\lst@maxwidth=\dimen159
+ (c:/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count273
+\lst@skipnumbers=\count274
+\lst@framebox=\box50
+) (c:/texlive/2020/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (c:/texlive/2020/texmf-dist/tex/latex/fncychap/fncychap.sty
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \RW=\skip61
 \mylen=\skip62
@@ -130,7 +152,8 @@ Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \pxx=\skip67
 ) (c:/texlive/2020/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
- (c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
+
+(c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
@@ -138,28 +161,27 @@ Package color Info: Driver file: pdftex.def on input line 147.
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 )) (c:/texlive/2020/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
-
-(c:/texlive/2020/texmf-dist/tex/latex/tools/xspace.sty
+ (c:/texlive/2020/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count267
-\c@Blindtext=\count268
-\c@blind@countparstart=\count269
-\blind@countxx=\count270
-\blindtext@numBlindtext=\count271
-\blind@countyy=\count272
-\c@blindlist=\count273
-\c@blindlistlevel=\count274
-\c@blindlist@level=\count275
-\blind@listitem=\count276
-\c@blind@listcount=\count277
-\c@blind@levelcount=\count278
-\blind@mathformula=\count279
-\blind@Mathformula=\count280
-\c@blind@randomcount=\count281
-\c@blind@randommax=\count282
-\c@blind@pangramcount=\count283
-\c@blind@pangrammax=\count284
+\c@blindtext=\count275
+\c@Blindtext=\count276
+\c@blind@countparstart=\count277
+\blind@countxx=\count278
+\blindtext@numBlindtext=\count279
+\blind@countyy=\count280
+\c@blindlist=\count281
+\c@blindlistlevel=\count282
+\c@blindlist@level=\count283
+\blind@listitem=\count284
+\c@blind@listcount=\count285
+\c@blind@levelcount=\count286
+\blind@mathformula=\count287
+\blind@Mathformula=\count288
+\c@blind@randomcount=\count289
+\c@blind@randommax=\count290
+\c@blind@pangramcount=\count291
+\c@blind@pangrammax=\count292
 ) (c:/texlive/2020/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
 ) (c:/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -173,8 +195,8 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\Gin@req@height=\dimen156
-\Gin@req@width=\dimen157
+\Gin@req@height=\dimen160
+\Gin@req@width=\dimen161
 ) (c:/texlive/2020/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
@@ -186,41 +208,41 @@ Package: pdfpages 2021/01/09 v0.5r Insert pages of external PDF documents (AM)
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ) (c:/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count285
-\calc@Bcount=\count286
-\calc@Adimen=\dimen158
-\calc@Bdimen=\dimen159
+\calc@Acount=\count293
+\calc@Bcount=\count294
+\calc@Adimen=\dimen162
+\calc@Bdimen=\dimen163
 \calc@Askip=\skip68
 \calc@Bskip=\skip69
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count287
+\calc@Ccount=\count295
 \calc@Cskip=\skip70
 ) (c:/texlive/2020/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
-\ESO@tempdima=\dimen160
-\ESO@tempdimb=\dimen161
+\ESO@tempdima=\dimen164
+\ESO@tempdimb=\dimen165
 )
-\AM@pagewidth=\dimen162
-\AM@pageheight=\dimen163
+\AM@pagewidth=\dimen166
+\AM@pageheight=\dimen167
  (c:/texlive/2020/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2021/01/09 v0.5r Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count288
-\AM@pagebox=\box49
-\AM@global@opts=\toks22
-\AM@pagecnt=\count289
-\AM@toc@title=\toks23
-\c@AM@survey=\count290
-\AM@templatesizebox=\box50
-) (c:/texlive/2020/texmf-dist/tex/latex/transparent/transparent.sty
+\pdfpages@includegraphics@status=\count296
+\AM@pagebox=\box51
+\AM@global@opts=\toks23
+\AM@pagecnt=\count297
+\AM@toc@title=\toks24
+\c@AM@survey=\count298
+\AM@templatesizebox=\box52
+)
+(c:/texlive/2020/texmf-dist/tex/latex/transparent/transparent.sty
 Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
  (c:/texlive/2020/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )) (c:/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-
-(c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
+ (c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -236,25 +258,25 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count291
-\l__pdf_internal_box=\box51
+\l__kernel_color_stack_int=\count299
+\l__pdf_internal_box=\box53
 ) (./Energy Analytics.aux)
 \openout1 = `"Energy Analytics.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -290,19 +312,20 @@ LaTeX Font Info:    ... okay on input line 36.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+\c@lstlisting=\count300
 (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count292
-\scratchdimen=\dimen164
-\scratchbox=\box52
-\nofMPsegments=\count293
-\nofMParguments=\count294
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count295
-\MPscratchDim=\dimen165
-\MPnumerator=\count296
-\makeMPintoPDFobject=\count297
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count301
+\scratchdimen=\dimen168
+\scratchbox=\box54
+\nofMPsegments=\count302
+\nofMParguments=\count303
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count304
+\MPscratchDim=\dimen169
+\MPnumerator=\count305
+\makeMPintoPDFobject=\count306
+\everyMPtoPDFconversion=\toks26
 ) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -315,35 +338,43 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 37.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 38.
  (c:/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
 {c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 38--38
+Overfull \hbox (6.0pt too wide) in paragraph at lines 39--39
 [][] 
  []
 
-(./Energy Analytics.toc)
+(./Energy Analytics.toc [1
+
+])
 \tf@toc=\write3
 \openout3 = `"Energy Analytics.toc"'.
 
- [1
 
-] [2
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[2] [3
 
 ]
 Lecture 1.
-[3
+[4
 
 ]
 
@@ -353,7 +384,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4]
+[5]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -361,20 +392,66 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5] (./Energy Analytics.aux) ) 
+[6] [7
+
+]
+Lecture 2.
+[8
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9]
+Overfull \hbox (7.37444pt too wide) in paragraph at lines 151--152
+[]\OT1/cmr/m/n/12 Operation and eco-nomic char-ac-ter-is-tics some-where be-twwen base-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10]
+Overfull \hbox (2.79213pt too wide) in paragraph at lines 171--172
+[]\OT1/cmr/m/n/12 Renewable re-sources are more dis-tributed than con-ven-tional types. They
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[11]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12] (./Energy Analytics.aux) ) 
 Here is how much of TeX's memory you used:
- 4729 strings out of 479304
- 65396 string characters out of 5871213
- 363476 words of memory out of 5000000
- 21832 multiletter control sequences out of 15000+600000
+ 6078 strings out of 479304
+ 84613 string characters out of 5871213
+ 387080 words of memory out of 5000000
+ 23168 multiletter control sequences out of 15000+600000
  415890 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,11n,74p,537b,252s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,11n,74p,537b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "Energy Analytics.pdf" (6 pages, 80293 bytes).
+Output written on "Energy Analytics.pdf" (13 pages, 99432 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

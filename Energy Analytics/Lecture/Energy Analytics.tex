@@ -3,6 +3,7 @@
 \usepackage{fancyhdr}
 %\setlength{\headheight}{15pt}
 \usepackage{geometry}
+\usepackage{listings}
 \geometry{margin=1.5in}
 \usepackage[Rejne]{fncychap}
 \pagestyle{fancy}
@@ -37,7 +38,7 @@
   \maketitle
   \tableofcontents
   \part{Week 1}
-  \chapter{Introduction}
+  \chapter{Course Introduction}
   \section{Syllabus}
   The course syllabus is available on eLearning and coursebook. Professor and TA office hours are in MSTeams. Every Tuesday and Thursday 10 am - 11 am and 3 pm - 4 pm. Lectures will be posted Mondays and Wednesdays on MS Stream.
 
@@ -69,13 +70,153 @@
 
     PV (solar energy storage) has been steadily growing in the US as well. PV installations are split between Residential, Non-residential, and Utility. Solar energy resources vary with location as well.
 
+
+
   \subsection{What are the biggest drivers of renewable installations and penetration rates?}
     Policy is a big driver, states have different renewable portfolio standard targets. The costs to implement renewable energy has been decreasing over the years. Solar is a little more expensive than wind, but they are both becoming competitive with non-renewables. Utility-Scale PV costs have droped from \$5.52 per W to \$1.13 per W.
 
   \section{Renewables Integration}
-    Power generation and energy consumption must be balanced. This balance becomes more challenging with renewables, because you cannot control how much wind blows or how much the sun shines. 
+    Power generation and energy consumption must be balanced. This balance becomes more challenging with renewables, because you cannot control how much wind blows or how much the sun shines.
 
 
 
+
+
+  \part{Week 2}
+
+  \chapter{Energy Analytics and R}
+
+  \section{Energy Quiz}
+
+  \begin{enumerate}
+    \item How much of the energy in burning coal reaches the consumer as electricity? (33\%)
+    \item Which State consumes the most energy? (Texas)
+    \item Which state produces the most coal? (Wyoming)
+    \item What country produces the most coal? (China)
+    \item Which country generates the most electricity from nuclear power? (United States)
+    \item What country generates the greatest share of its electricity from wind power? (Denmark)
+    \item Electricity is called a secondary energy source because ... (We get it from converting other energy sources)
+    \item Most of the energy we use originally came from? (The sun)
+  \end{enumerate}
+
+  \section{Power System Background}
+
+  Power systems have transitioned from centralized to distributed generation (Solar panels on roofs, batteries, PV panels, small generators). One challenge is that the energy flows in two directions, instead of one. Another challenge is that renewable energy is variable and uncertain. However, advanced communication has allowed decentralized control of devices.
+
+  \subsection{Power System Operations Timescales}
+
+  The power system load changes throughout the day. As your load changes, your power generation should change as well. Regulation is seconds to minutes, load flowing is minutes to hours, and scheduling is the entire day. Unit commitment refers to several day.
+
+  \subsection{Energy Sector}
+
+  Electricity is only one part of the energy sector. There is a trade off between fixed costs and operating costs.
+  \begin{itemize}
+    \item Nuclear and Solar have high fixed cost, low operating costs
+    \item Natural gas/oil have low fixed costs, high operating costs (depends on fuel prices)
+    \item Coal, wind, hydro are in between
+  \end{itemize}
+
+  \noindent
+  A units \textbf{Capacity Factor} is important to determining ultimate cost of electricity. Wind has a low capacity factor (50\%). Some renewables have tax credits, which affect the economics. Different renewables have different levelized costs (USD/kwH). The levelized cost of Solar PV has decreased from 2010 to 2014.
+
+  \newpage
+
+  \subsection{Conventional Power System}
+
+  The conventional power system is a one way system. You generate the power and send it to the customer. In later lectures we will talk about different changes in power systems to centralized systems to decentralized systems.
+  \begin{enumerate}
+    \item Generation (Source)
+    \item Transmission Substation (Change voltage to a suitable value)
+    \item Transmission System (Carry energy long distances)
+    \item Distribution Substation (Change volatge, smaller than transmission substation)
+    \item Distribution System (Power lines, distribute to customer)
+    \item Customer (Loads)
+  \end{enumerate}
+
+  \subsection{Power Plant Classification}
+
+  There are 3 categories.
+
+  \begin{enumerate}
+    \item Base-Load Generating Units
+    \begin{itemize}
+      \item Constant power generation over time
+      \item Long start-up and shut-down times
+      \item Low cost of production, but high capital investment
+      \item ex. Nuclear, Hydroelectric, High-Performance Steam Turbine Plant
+    \end{itemize}
+    \item Intermediate (Load Following) Generating Plant
+    \begin{itemize}
+      \item Typicall runs at full-load between 2,000 - 5,000 hrs/yr
+      \item Operation and economic characteristics somewhere betwwen base-load and peak-load
+      \item ex. Simple Steam Turbine Plant, Old Base-Load Plant, combined Gase and Steam Turbine Plant, Sleected Hydroelectric Power Plant
+    \end{itemize}
+    \item Peak-Load Generating Units
+    \begin{itemize}
+      \item Quick starting and shutdown capability
+      \item Runs between 100 - 2,500 hrs/yr during peak loads
+      \item Standby and emergency units
+      \item ex. Gas Turbine, Diesel Engine, Hydro - Pumped Storage
+    \end{itemize}
+  \end{enumerate}
+
+  \subsection{Interconnections}
+
+  The US has 3 synchronous grids (interconnections). The Eastern Interconnection, Western Interconnnection, Texas Interconnection (cool!).
+
+  \subsection{Renewable Energy and Distributed Generation}
+
+  Most renewable energy will be converted into electricity. The resource will be distributed geographically and mostly dependent on changing weather and climate. However, the resource cannot be directly controlled in the manner of conventional generation (variable and uncertain output).
+
+  Renewable resources are more distributed than conventional types. They are often connected at low voltages. Increasing the input from renewable energy sources requires a revision of the way power systems are designed and operated in order to better accomodate these sources better.
+
+  \section{Analysis}
+
+  \subsection{Actionable Decision Support \& Automation}
+
+  The amount of analytics and human input depends on the type of analysis. Our goal is to use prescriptive analytics, so the computer will either support a decision, or make the decision automatically.
+
+  \begin{itemize}
+    \item Descriptive - What happened?
+    \item Diagnostic - Why did it happen?
+    \item Predictive - What will happen?
+    \item Prescriptive - What should I do?
+  \end{itemize}
+
+  \subsection{Behind the Meter (BTM) Solar Forecasting}
+  Different levels of difficulty associated with solar forecasting. BTM is for very small systems.
+  \begin{itemize}
+    \item Bottom-up approach
+    \item Multi-timescale Forecasting
+    \item Distributed Solar Ramp forecasting
+  \end{itemize}
+
+  \subsection{Types of Load Forecasting}
+
+  \begin{itemize}
+    \item Short term forecasts (one hour to a week)
+    \item Medium forecasts (a month up to a year)
+    \item Long term forecasts (over one year)
+  \end{itemize}
+
+  \subsection{Key Methods}
+
+  \begin{itemize}
+    \item Time series models, visualization, regression models, decomposition
+    \item Machine Learning models
+    \item Deep learning models
+    \item Probablility, distribution, visualization
+  \end{itemize}
+
+  \section{Distributions}
+
+  We will talk about probability distributions more in-depth in the future.
+
+  \subsection{Normal Distribution}
+
+  \begin{itemize}
+    \item Probability density function
+    \item Cumulative distribution function
+  \end{itemize}
 
 \end{document}
