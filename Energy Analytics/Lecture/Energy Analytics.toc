@@ -28,3 +28,4 @@
 \contentsline {subsection}{\numberline {2.3.4}Key Methods}{12}{}%
 \contentsline {section}{\numberline {2.4}Distributions}{12}{}%
 \contentsline {subsection}{\numberline {2.4.1}Normal Distribution}{12}{}%
+\contentsline {chapter}{\numberline {3}R in Class}{13}{}%
