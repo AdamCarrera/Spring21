@@ -529,4 +529,207 @@
       \mathcal{L}\left\{\int f(\tau)d \tau \right\} = \frac{1}{s} F(s)
     .\]
 
+
+  \chapter{Laplace Transforms}
+
+  \section{Laplace Transforms of Special Functions}
+
+  \begin{enumerate}
+    \item Unit Step $ \mathcal{L}\{u_s\} = \frac{1}{s}. $
+    \item Unit Ramp $ \mathcal{L}\{u_r\} = \frac{1}{s ^2}. $
+    \item Unit Pulse $ \mathcal{L}\{u_p\} = \frac{1}{sD} \left( 1-e^{sD} \right). $
+    \item As D approaches zero, we get the unit impulse function
+    \item $ \mathcal{L}\{\delta(t)\} = 1. $
+  \end{enumerate}
+
+  \section{Properties of Laplace Transforms}
+
+  \subsection{Time Shift}
+  Many time shifts occur due to distance traveled. E.g. Flow through a pipe. A time shift results in a multiplication by an exponential in the frequency domain.
+  \[
+      \mathcal{L}\{f(t-\alpha)\} = e^{-\alpha s}F(s)
+    .\]
+
+  \subsection{Multiplication by Exponential}
+  Multiplication by an exp in the time domain results in a shift in the frequency domain.
+  \[
+      \mathcal{L}\{e^{-\alpha t}f(t)\} = F(s + \alpha)
+    .\]
+
+  \section{Initial Value Theorem}
+
+  Sometimes we would like to find the value of $ x(t) $ at $ t = 0^+. $ Given the laplace transform of the function we have the initial value theorem (IVT)
+
+  \begin{equation}
+    x(0^+) = \lim_{t \rightarrow 0} x(t) = \lim_{s \rightarrow \infty} sX(s)
+  \end{equation}
+
+  This is only applicable if the limit exists, and the transforms and derivatives of $ x(t) $ exist.
+
+  \section{Final Value Theorem}
+
+  Sometimes we would like to know the limit of a function as time goes to infinity. If the limit exists, and transforms/derivatives of $ x(t) $ exist we have the final value theorem (FVT).
+
+  \begin{equation}
+    \lim_{t \rightarrow \infty} x(t) = \lim_{s \rightarrow 0} sX(s)
+  \end{equation}
+
+  \section{Example - Solving ODE with Laplace}
+
+  We have the EOM,
+
+  \[
+      m\ddot x + c \dot x + kx = 0
+    .\]
+  \noindent
+  laplace transform and initial conditions gives us
+
+  \[
+      m(s ^2X(s) -s) + c(sX(s) - 1) + kX(s) = 0
+    .\]
+  \noindent
+  rearrange,
+  \[
+      (ms ^2 + cs + k)X(s) = ms + c
+    .\]
+
+  \[
+      X(s) = \frac{ms + c}{ms ^2 + cs + k}
+    .\]
+
+  \subsection{Partial Fraction Expansion}
+  we can find $ x(t) $ with inverse laplace transforms. Our transfer function is a ration of polynomials.
+
+  \[
+      X(s) = \frac{N(s)}{D(s)}
+    .\]
+
+  \noindent
+
+  Our goal is to express $ X(s)$ as a suitable sum of fractions by dividing $ D(s) $ into 1st and 2nd order roots. Then we can preform the inverse laplace transform.
+
+  \subsubsection{Case 1: Distinct Roots}
+
+  If $ D(s) $ contains $ (s + p_i). $ The corresponding factor is,
+
+  \[
+      \frac{A_i}{s + p_i}
+    .\]
+
+  where $ A_i $ is the called the "residue".
+
+  \subsubsection{Case 2: Repeated Roots}
+
+  If $ D(s) $ contains $ (s + p_i)^{r_i}. $ The corresponding factor is,
+
+  \[
+      \frac{A_{r_i}}{ \left( s + p_i \right)^{r_i} } + \frac{A_{r_i-1}}{ \left( s + p_i \right)^{r_{i}-1} } + \ldots
+    \]
+
+  from the table,
+
+  \begin{equation}
+    \mathcal{L}^{-1}\left\{\frac{1}{(s+a)^n}\right\} = \frac{1}{(n-1)!}t^{n-1}e^{-at}
+  \end{equation}
+
+  increase the power of t as you have more repetition!
+
+  \subsubsection{Case 3: Complex Roots}
+
+  If $ D(s) $ contains $ s ^2 + as + b. $ The corresponding factor is,
+
+  \[
+      \frac{Bs + C}{s ^2 + as + b}
+    .\]
+
+  Before taking the inverse Laplace transform, we need to complete the square
+
+  \[
+      s ^2 + as + b = (s + \sigma) ^2 + \omega ^2
+    .\]
+
+  eg,
+
+  \[
+      s ^2 + 2s + 2 = (s ^2 + 2s + 1) + 1 = (s + 1) ^2 + 1
+    .\]
+
+  The goal is to write in terms of sine and cosine. This introduces oscillation in our signal.
+
+  \[
+      = A_1 \mathcal{L}^{-1}\left\{\frac{s + \sigma}{(s + \sigma) ^2 + \omega ^2}\right\} + A_2 \mathcal{L}^{-1}\left\{\frac{\omega}{(s + \sigma) ^2 + \omega ^2}\right\}
+    .\]
+
+  \section{Parts of the Response}
+
+  The \textbf{Transient Reponse} is the part that disappears with time. The parts that remain with time are the \textbf{Steady-state Response}. The \textbf{Free Response} is the part that depends on the ICs, and the \textbf{Forced Response} is the part due to the forcing function. We can write the total response as a sum of the transient and steady state or the sum of the free and forced response! Note that we will not always have two terms.
+
+  \section{Transfer Functions}
+
+  \textbf{Transfer Functions} capture the dynamics of the system \textbf{independent of ICs and input} (forcing functions)
+
+  \begin{equation}
+    T(s) = \frac{X(s)}{F(s)}
+  \end{equation}
+
+  example,
+
+  \[
+      \dot x + ax = f(t) \Rightarrow (s+a)X(s) = F(s)
+    .\]
+
+  \[
+      T(s) = \frac{X(s)}{F(s)} = \frac{1}{s+a}
+    .\]
+
+  Denominator of transfer function is the caracteristic equation, it can tell us about the general behavior of the system.
+
+  \[
+      T(S) = \frac{1}{s ^2 + 7s + 10}, \quad r = -2, -5
+    .\]
+
+  \begin{itemize}
+    \item Roots are real - no oscillation in response
+    \item Roots are negative - model is stable and free response converges to zero
+  \end{itemize}
+
+
+
+  Transfer function is internal to the system, and is a mapping between the input and the output. We can also go back and forth between ODE and Transfer Function.
+
+  \[
+      G: X \rightarrow F
+    .\]
+
+  The transfer function is a ratio of polynomials. The system zeroes are the roots of the numerator and the poles are the roots of the denominator.
+
+  Example,
+
+  \[
+      G(s) = \frac{s + 1}{s + 2}
+    .\]
+
+  has a zero at -1 and a pole at -2. Zeroes are given by models with derivatives of the input. The numerator dynamics can significantly alter the response but the analysis is the same.
+
+  Note,
+
+  \[
+      g(t) = u_s(t) \Rightarrow \dot g(t) = \delta (t)
+    .\]
+
+  \section{Transfer Function and Convolution}
+
+  For LTI systems, teh system response is the convolution of the input function and the system's impulse response. From the definition of a transfer function, the response of our system is,
+
+  \begin{equation}
+    X(s) = G(s)F(s)
+  \end{equation}
+
+  We can also think about $ G(s) $ as the impulse response of our system.
+
+  \[
+      f(t) = \delta (t) \Rightarrow F(s) = 1 \Rightarrow X(S) = G(s)F(s) = G(s) \cdot 1
+    .\]
+
+
 \end{document}

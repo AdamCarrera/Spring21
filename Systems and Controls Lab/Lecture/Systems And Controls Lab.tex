@@ -104,4 +104,109 @@
   Self paced activity posted next week to learn more about Matlab/Simulink. Ask the professors or TA's for help if you are stuck with matlab or simulink.
 
 
+
+  \part{Week 2}
+
+  \section{Fluid and Thermal Systems}
+  Most system dynamics are governed by basic conservation laws, which are a great way to start modeling a system. The two important ones are conservation of mass and conservation of mass as a rate,
+
+  \begin{equation}
+    \sum m_{in} - \sum m_{out} = m_{stored}
+  \end{equation}
+
+  \begin{equation}
+    \sum q_{in} - \sum q_{out} = \frac{dm}{dt} = \dot m
+  \end{equation}
+
+  We also can make use of conservation of energy for fluid systems.
+
+  \begin{equation}
+    \sum E_{in} - \sum E_{out} = E_{stored}
+  \end{equation}
+
+  \section{Assumptions}
+
+  \begin{itemize}
+    \item Flow through a restriction/resistance (eg valve) is proportional to the pressure accross it. As resistance $ R $ increases flow decreases
+  \end{itemize}
+
+  \begin{equation}
+    q = \frac{1}{R} \left( P_1 - P_2 \right)
+  \end{equation}
+
+  \begin{itemize}
+    \item Pressure at the bottom of the tank is proportional to the height of the liquid (hydrostatic pressure)
+  \end{itemize}
+
+  \begin{equation}
+    P = \rho gh + P_a \Rightarrow \Delta P = \rho g \Delta h
+  \end{equation}
+
+  \begin{itemize}
+    \item Constant cross-sectional area (hydraulic capacitance)
+  \end{itemize}
+
+  \begin{equation}
+    C = \frac{A}{g}
+  \end{equation}
+
+  \section{Hydraulic System Modeling}
+
+  Start with conservation of mass,
+
+  \[
+      \frac{dm}{dt} = q_{mi} - q_{mo}
+    .\]
+
+  The value of $ q_{mo} $ is given by the resistance, and $ P_{bottom} $ is given by the hydrostatic pressure
+
+  \[
+      q_{mo} = \frac{1}{R} \left( P_{bottom} - P_a \right)
+    .\]
+
+  \[
+      P_{bottom} = \rho gh + P_a
+    .\]
+
+  Substition yields that,
+
+  \begin{equation}
+    q_{mo} = \frac{1}{R} \left( \rho gh + P_a - P_a \right) = \frac{\rho g}{R}h
+  \end{equation}
+
+  Revisiting the conservation of mass, we can change the differential term from mass to height.
+
+  \[
+      m = \rho V = \rho Ah \Rightarrow \frac{dm}{dt} = \rho A \dot h
+    .\]
+
+  This gives us a linear first order ODE for the height, we can simplify further with capacitance.
+
+  \begin{equation}
+    \rho A \dot h = q_{mi} - \frac{\rho g}{R}h
+  \end{equation}
+
+  \begin{equation}
+    RC \dot h + h = \frac{R}{\rho g}q_{mi}
+  \end{equation}
+
+  Two model two different tanks, you go through this process twice. Once for each tank.
+
+  \section{First Order Systems (Review)}
+
+  General forms,
+
+  \begin{equation}
+    \tau \dot x + x = k \cdot f(t)
+  \end{equation}
+
+  where $ \tau $ is the time constant, and $ k $ is the gain. We can also represent this as a transfer function using laplace transforms.
+
+  \begin{equation}
+    \frac{X(s)}{F(s)} = \frac{k}{\tau s + 1}
+  \end{equation}
+
+  For a unit impulse response, this system evolves exponentially. After one time constant, we would expect 63\% of the water to have drained from the tank. After 4 time constants we would expect 98\% of the water to have drained from the tank.
+
+  For a unit set response, we would expect the system to reach a steady state value. Where the mass flow rate in equals the mass flow rate out.
 \end{document}
