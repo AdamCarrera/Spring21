@@ -20,6 +20,8 @@
 \usepackage{transparent}
 \usepackage{xcolor}
 
+\setlength\parindent{0pt}
+
 \newcommand{\incfig}[2][1]{%
   \def\svgwidth{#1\columnwidth}
   \import{figures}{#2.pdf_tex}
@@ -221,5 +223,181 @@
 
 
   \chapter{R in Class}
+
+  \part{Week 3}
+
+  \chapter{Convential Power Generation}
+
+  \section{Thermal Power Generation}
+
+  \begin{itemize}
+    \item Coal-fired thermal power: Baseload operation
+    \item LNG-fired thermal power: Base to middle load operation (Liquid Natural Gas)
+    \item Oil-fired thermal power: Middle to peak load operation
+  \end{itemize}
+
+  The basic principle is,
+
+  \begin{itemize}
+    \item Fuel tank sends fuel to boiler
+    \item Boiler boils water which creates team
+    \item Turbine is driven by the high temperature steam
+    \item Generator is powered by the turbine
+  \end{itemize}
+
+  \subsection{Coal Generation Details}
+
+  Coal plants are divided into Regular, Super Critical, and Ultra Super Critical plants. The pressure levels, efficiency levels, and temperature increase with each plant.
+
+  \subsection{Grid Integration Details}
+
+  Coal plants are base load, which means long start up and shutdown times (24 hrs or more!). The long minimum run times and high minimum generation levels are a challenge for integration.
+
+  \subsection{Plant Scherer - Georgia}
+
+  \begin{itemize}
+    \item Total Capacity: 3,520 MW
+    \item Largest GHG emitter in the US (20M tons per year)
+    \item 7th largest plant in the US (by Capacity)
+    \item Capacity Factor: 61.2 \%
+    \item Consumes 11M tons of coal per year
+    \item Each of four cooling towers circulates 270k gallons of water per minutes with 8k gallons lost to evaporation
+  \end{itemize}
+
+  \section{Discussion}
+
+  \begin{itemize}
+    \item What are the three largest generation plants in the US?
+    \item What technologies would you expect them to be?
+  \end{itemize}
+
+  See Table \ref{tab:4.1}.
+
+  \begin{table}
+    \centering
+    \begin{tabular}{c c}
+      Plant Name & Energy Source \\
+      \hline
+      Grand Coulee & Hydroelectric \\
+      Palo Verde & Nuclear \\
+      Martin & Natural gas, fuel oil
+    \end{tabular}
+    \caption{Largest US Power Plants and Primary Energy Source}
+    \label{tab:4.1}
+  \end{table}
+
+  \section{Natrual Gas Plants}
+
+  Conversion efficiencies typically between 20 - 35\% with temperatures of 2000 F. These turbines can generally start up and shut down faster, as well as being able to ramp up more quickly. May be flexible with fuel oil as an alternative.
+
+  \subsection{Turbine Types}
+
+  \begin{itemize}
+    \item Heavy Frame
+      \begin{itemize}
+        \item Lower pressure ratio ($ < $ 20)
+        \item Tend to be larger
+      \end{itemize}
+    \item Aero-derivative
+      \begin{itemize}
+        \item Higher pressure ratio ($ > $ 30)
+        \item Tend to be smaller
+      \end{itemize}
+  \end{itemize}
+
+  \section{Discussion}
+
+  Gas and steam turbines have low efficiencies. How can we increase that efficiency?
+
+  \begin{itemize}
+    \item We can combine the gas and steam turbines, this is called a combined cycle.
+    \item Another way is to have the gas from the gas plant boil the water for the steam plant.
+  \end{itemize}
+
+  The efficiency can be increase to about 50 - 60\%. Can be operated seperately as well. The typical start-up time for (older) full units is 2-4 hours. These are historically mid range units.
+
+  \section{Nuclear Generators}
+
+  Nuclear is a carbon neutral technology.
+
+  \begin{itemize}
+    \item Containment building holds the reactor, which boils the water
+    \item The steam powers the turbine, generating electricity
+  \end{itemize}
+
+  \subsection{Nuclear Facts}
+
+  \begin{itemize}
+    \item Over 400 plants in 30 countries
+    \item Power form Fission, not fusion
+    \item Uses uranium 235
+    \item Nuclear waste disposal is still an unsolved problem
+  \end{itemize}
+
+  \subsection{Grid Integration}
+
+  \begin{itemize}
+    \item Base load, week long startup and shutdown times
+    \item Very little ramping capability
+    \item Large capacity plants
+    \item Ultra-high minimum generation levels, often 90\% capacity
+  \end{itemize}
+
+  \section{Hydropower}
+
+  \begin{itemize}
+    \item Conventional - dams
+    \item Unconventional hydropower
+      \begin{itemize}
+        \item Hydrokinetic power
+      \end{itemize}
+  \end{itemize}
+
+  Which country produced the most hydropower?
+
+  \begin{enumerate}
+    \item China
+    \item Brazil
+    \item Canada
+    \item US
+    \item Russia
+  \end{enumerate}
+
+
+  We are unlikely to build more conventional hydro any more (environment concerns). But we can still build pumped storage. Here are some more facts.
+
+  \begin{itemize}
+    \item 80 - 90\% efficiency
+    \item 6 - 10 \% of US electricity generation
+    \item Roughly 100 GW of capacity
+    \item 80k dams in the US, 2.4k have hydropower
+    \item about 20\% of world electricity usage
+    \item 77\% of Brazilian power
+    \item about 17\% of Chinese power
+    \item 95\% of power in Norway
+  \end{itemize}
+
+  \section{Discussion}
+
+
+  What are some of the limitations towards expanding hydropower in the US? Internationally?
+
+  \section{Geothermal Generation}
+
+  Cold water is pumped down to the earth. The heat of the earth heats up the water making steam, which travels up to the generating station.
+
+  \begin{itemize}
+    \item Dry steam (150 C)
+    \item Flas steam (180 C)
+    \item Binary Cycle (60 C)
+  \end{itemize}
+
+
+
+
+
+
+  \chapter{Homework 1}
+
   
 \end{document}
