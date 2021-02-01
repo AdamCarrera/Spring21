@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+
+\fancyhf{}
+\pagestyle{fancy}
+\lhead{Carrera}
+\rhead{\thepage}
+
+\setlength\parindent{0pt}
+\numberwithin{equation}{subsection}
+
+%\usepackage{titlesec}
+%\titleformat{\section}
+%{\normalfont\Large\bfseries}{Exercise~\thesection}{1em}{}
+
+\newcommand{\incfig}[2][1]{%
+  \def\svgwidth{#1\columnwidth}
+  \import{./figures/}{#2.pdf_tex}
+}
+
+\newcommand{\RE}{\mathrm{Re}}
+\newcommand{\IM}{\mathrm{Im}}
+
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+\pdfsuppresswarningpagegroup=1
+
+\author{Adam Carrera}
+\date{February 1, 2021}
+\title{MECH 4110 - Pre-lab \#1}
+
+\begin{document}
+  \maketitle
+
+  \section{Equation of Motion Derivation}
+
+  \subsection{Configuration 1}
+
+  Configuration 1 consists of the pump and tank 1. Based on this, we know that the input and output flowrates are given by,
+
+  \begin{equation}
+    q_{m, \, pump} = \rho K_p v_p
+  \end{equation}
+
+  \begin{equation}
+    q_m = C_d A_o \sqrt{2\rho \left( P_1 - P_2 \right)}
+  \end{equation}
+
+  where,
+
+  \begin{align}
+    P_1 &= P_a + \rho g h \\
+    P_2 &= P_a
+  \end{align}
+
+  Finally, we also know that,
+
+  \begin{equation}
+    \frac{dm}{dt} = \rho A_c \dot h
+  \end{equation}
+
+  The change in mass with respect to time is given by conservation laws, we can develop the equation of motion by substituting Equations (1.1.1) - (1.1.5) and simplifying.
+
+  \begin{equation}
+    \frac{dm}{dt} = \sum q_{m, \, in} - \sum q_{m ,\, out}
+  \end{equation}
+
+  \begin{equation}
+    \rho A_c \dot h = \rho K_p v_p - C_d A_o \sqrt{2\rho \left( P_a + \rho gh - P_a \right)}
+  \end{equation}
+
+  \begin{equation}
+    \rho A_c \dot h = \rho K_p v_p - C_d A_o \sqrt{2\rho^2 gh}
+  \end{equation}
+
+  \begin{equation} \label{eqn:eom1}
+    A_c \dot h_1 +  C_d A_o \sqrt{2gh_1} = K_p v_p
+  \end{equation}
+
+  Equation (\ref{eqn:eom1}) is a non-linear ODE relating the height to the input voltage. We have added a subscript of 1 to $ h $ so that we can differentiate between the two heights further down the line.
+
+  \subsection{Configuration 2}
+
+  Configuration 2 consists of both tanks, with only 1 output from the pump. The flow into Tank 2 is the flow out of Tank 1.
+
+  \begin{equation}
+    q_{m, \, in} = \rho C_{d, \, 1} A_{o, \, 1}  \sqrt{2gh_1}
+  \end{equation}
+
+  \begin{equation}
+    q_{m, \, out} = \rho C_{d, \, 2} A_{o, \, 2}  \sqrt{2gh_2}
+  \end{equation}
+
+  Using the same conservation law, we can find the equation of motion for Tank 2.
+
+  \begin{equation}
+    \frac{dm}{dt} = \sum q_{m, \, in} - \sum q_{m ,\, out}
+  \end{equation}
+
+  \begin{equation}
+    \rho A_{c, \, 2} \dot h_2 = \rho C_{d, \, 1} A_{o, \, 1}  \sqrt{2gh_1} - \rho C_{d, \, 2} A_{o, \, 2}  \sqrt{2gh_2}
+  \end{equation}
+
+  \begin{equation} \label{eqn:eom2}
+    A_{c, \, 2} \dot h_2 + C_{d, \, 2} A_{o, \, 2}  \sqrt{2gh_2} = C_{d, \, 1} A_{o, \, 1}  \sqrt{2gh_1}
+  \end{equation}
+
+
+
+
+
+  \subsection{Configuration 3}
+
+\end{document}
