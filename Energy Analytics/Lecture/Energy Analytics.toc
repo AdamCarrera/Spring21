@@ -45,4 +45,3 @@
 \contentsline {section}{\numberline {4.6}Hydropower}{18}{}%
 \contentsline {section}{\numberline {4.7}Discussion}{19}{}%
 \contentsline {section}{\numberline {4.8}Geothermal Generation}{19}{}%
-\contentsline {chapter}{\numberline {5}Homework 1}{20}{}%
