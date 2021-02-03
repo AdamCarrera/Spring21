@@ -81,10 +81,10 @@
   \end{equation}
 
   \begin{equation} \label{eqn:eom1}
-    A_c \dot h_1 +  C_d A_o \sqrt{2gh_1} = K_p v_p
+    A_{c, \, 1} \dot h_1 +  C_{d, \, 1} A_{o, \, 1} \sqrt{2gh_1} = K_p v_p
   \end{equation}
 
-  Equation (\ref{eqn:eom1}) is a non-linear ODE relating the height to the input voltage. We have added a subscript of 1 to $ h $ so that we can differentiate between the two heights further down the line.
+  Equation (\ref{eqn:eom1}) is a non-linear ODE relating the height to the input voltage. We have added a subscripts of 1 to $ h, A_c, C_d, \text{ and } A_o $ so that we can differentiate between the two tanks further down the line.
 
   \subsection{Configuration 2}
 
@@ -112,10 +112,6 @@
     A_{c, \, 2} \dot h_2 + C_{d, \, 2} A_{o, \, 2}  \sqrt{2gh_2} = C_{d, \, 1} A_{o, \, 1}  \sqrt{2gh_1}
   \end{equation}
 
-
-
-
-
-  \subsection{Configuration 3}
+  Equation (\ref{eqn:eom1}) coupled with (\ref{eqn:eom2}) model the coupled tanks of configuration two.
 
 \end{document}

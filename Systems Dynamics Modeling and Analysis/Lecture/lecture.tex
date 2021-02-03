@@ -19,6 +19,8 @@
 \usepackage{transparent}
 \usepackage{xcolor}
 
+\setlength\parindent{0pt}
+
 \newcommand{\incfig}[2][1]{%
     \def\svgwidth{#1\columnwidth}
     \import{figures}{#2.pdf_tex}
@@ -520,7 +522,7 @@
   \end{equation}
 
   \begin{equation}
-    \mathcal{L}\{\ddot{f(t)}\} = s ^2 F() - sf(0) - \dot{f(0)}
+    \mathcal{L}\{\ddot{f(t)}\} = s ^2 F(s) - sf(0) - \dot{f(0)}
   \end{equation}
 
   Integrals,
@@ -734,5 +736,150 @@
 
 
   \section{section name}
+
+  \part{Week 3}
+
+  \chapter{Transfer Functions}
+
+  \section{Quiz Review}
+  \begin{itemize}
+    \item L4Q3 - Remember that the transfer function is independent of initial conditions!
+  \end{itemize}
+
+  \section{Value of Transfer Functions}
+
+  Transfer functions are useful when working with matlab and simulink. They are the basis for block diagrams. Simulink is how you program block diagrams. Transfer functions can scale with multiple inputs and outputs as well. We can determine a transfer function for each IO pair.
+
+  \[
+      T_{ab}(S) = \frac{X_a(S)}{U_b(S)}
+    .\]
+
+  \subsection{Multiple Input Eample}
+  We can derivate a transfer function for each input by temporarily assuming all other inputs are zero.
+  \[
+      5 \ddot x + 30 \dot x + 40x = 6f(t) - 20g(t)
+    .\]
+
+  \begin{align*}
+    T_1(S) &= \frac{X(S)}{F(S)} = \frac{6}{5s ^2 + 30s + 40} \\
+    T_2(S) &= \frac{X(S)}{G(S)} = \frac{-20}{5s ^2 + 30s + 40}
+  \end{align*}
+
+  Note that the denominators are the same. By \textbf{superposition}, the total response is,
+
+  \[
+      X(S) = T_1(S)F(S) + T_2(S)G(S)
+    .\]
+
+  \subsection{Multiple Ouputs}
+
+  Systems of equations may have more than one dependent variable. We can derive transfer functions for each as well.
+
+  Example:
+  \begin{align*}
+    \dot x &= -3x + 2y \\
+    \dot y &= -9y -4x + 3v(t)
+  \end{align*}
+  Transform Equations:
+  \begin{align*}
+    sX(s) &= -3X(s) +2Y(s) \\
+    sY(S) &= -9Y(s) - 4X(S) + 3V(S) \\
+  \end{align*}
+  Eliminate all variables except for desired output and input.
+  \[
+      X(S) = \frac{2}{s+3}Y(S), \quad Y(S) = \frac{1}{s+9} \left( -4X(s) + 3V(s) \right)
+    .\]
+
+  \[
+      X(S) = \frac{2}{s+3} \left( \frac{1}{s+9} (-4X(S) +3V(s)) \right)
+    .\]
+
+  \[
+      \frac{X(s)}{V(S)} = \frac{6}{s ^2 + 12s + 35}
+    .\]
+
+  \[
+      \frac{Y(S)}{V(S)} = \frac{3(s+3)}{s ^2 + 12s + 35}
+    .\]
+
+  Note again that they have the same denominator! That is because the two equations represent one system.
+
+  \subsection{Fluid Tank}
+
+  For one tank, we will learn how to derive,
+
+  \[
+      \frac{Q_{out}(S)}{Q_{in}(S)} = \frac{1}{RCs + 1}
+    .\]
+
+  What if we had two tanks?
+
+  \[
+      \frac{Q_{12}(s)}{Q_{in}(s)} = \frac{1}{R_1C_1s + 1}
+    .\]
+
+    \[
+        \frac{Q_{out}(s)}{Q_{12}(s)} = \frac{1}{R_2C_2s + 1}
+      .\]
+
+  \[
+      \frac{Q_{out}(s)}{Q_{in}(s)} = \frac{Q_{out}(s)Q_{12}(s)}{Q_{12}(s)Q_{in}(s)}
+    .\]
+
+    \textbf{SLIDE 13}
+
+  \section{Block Diagrams}
+
+  Can use transfer functions of a system/model to construct a visual representation of the dynamics - \textbf{Block Diagram}. They show the physical connections of the system, and the cause and effect relationships between components. Block diagrams can be directly used to develop simulation diagrams in Simulink.
+
+  \subsection{Basic Symbols}
+
+  \begin{itemize}
+    \item Arrow - represents a variable/signal with direction showing cause and effect relationship. Can be labeled with the signal name in the laplace domain.
+    \item Block - input-output relation of a transfer function.
+    \item Circle (summation) - Addition or subtraction of signals.
+    \item Takeoff point - obtain value of variable for use elsewhere. Note that you cannot branch a signal into another.
+    \item Multiplier (Gain) $ X(s) = KF(s). $
+    \item Integration  $ X(s) = \frac{1}{s}F(s) = x(t) = \int f(t)dt. $ This is used to represent $ \dot x = f(t). $
+  \end{itemize}
+
+  \subsection{Equivalent Block Diagrams}
+
+  \begin{itemize}
+    \item Block diagrams are not unique
+    \item More than one diagram can represent the same model
+  \end{itemize}
+  Example:
+  \[
+      \dot x + 7x = f(t) \Rightarrow \frac{X(s)}{F(s)} = \frac{1}{s+7}
+    .\]
+
+  Can also be written as,
+
+  \[
+      X(s) = \frac{1}{s} \left( F(s) - 7X(s) \right)
+    .\]
+
+  The above equation can be written with a transfer function block, and the below equation can be written with a negative feedback loop.
+
+  \subsection{Block Algebra}
+
+  Blocks in series can be multiplied. For blocks $ T_1, \ldots T_n. $ in series,
+
+  \[
+      X(s) = \prod_{n=1}^{k} T_n
+    .\]
+
+  Blocks in parallel are added together. For blocks $ T_1, \ldots T_n. $ in parallel,
+
+  \[
+      X(s) = \sum_{n=1}^{k} T_n
+    .\]
+
+  \textbf{Add in the closed loop feedback}
+
+
+
+
 
 \end{document}
