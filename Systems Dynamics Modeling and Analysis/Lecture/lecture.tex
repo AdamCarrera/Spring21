@@ -882,4 +882,182 @@
 
 
 
+
+  \chapter{Block Diagrams}
+
+  \section{Block Diagram from System Model}
+
+  \[
+      3 \dot y + y = 2u
+    .\]
+
+  Take laplace transform and arrange highest power of $ s $ on the left.
+
+  \begin{align}
+    3sY(s) + Y(s) &= 2U(s) \\
+    sY(s) &= \frac{1}{3} \left( 2U(s) - Y(s) \right)
+  \end{align}
+
+  \begin{itemize}
+    \item Draw output signal going to the right
+    \item Draw string of integrators
+    \begin{itemize}
+      \item \# of integrators = highest power of $ s $
+      \item In this case just 1 integrator
+    \end{itemize}
+    \item Draw a gain block corresponding to the common coefficient on the RHS
+    \item Add summation block
+    \item Use existing signals to build up the sum of terms on the RHS
+  \end{itemize}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/blockdiagram1}
+    \caption{Example Block Diagram}
+  \end{figure}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/scope1}
+    \caption{Scope output of 6.1}
+  \end{figure}
+
+  \subsection{Alternative Approach}
+
+  This can be done in the time domain as well.
+
+  \[
+      \ddot x + 2\dot x + 3x = f(t)
+    .\]
+
+  Isolate highest derivative,
+
+  \[
+      \ddot x = f(t) - 2\dot x - 3x
+    .\]
+
+  String integrators to get x, and add terms to compute the highest derivative.
+
+  \section{Transfer Function and the IO equation}
+
+  Can go backwards from tansfer function to ODE.
+
+  \[
+      G(s) = \frac{s + 1}{s ^2 + 3s + 5}
+    .\]
+
+  \[
+      (s ^2 + 3s + 5) Y(s) = (s + 1) U(s)
+    .\]
+
+  \[
+      \ddot y + 3 \dot y + 5y = \dot u + u
+    .\]
+
+  \section{Transfer Function to State-Space}
+
+  For MIMO systems, we have see that the transfer function looks like
+
+  \begin{equation}
+    Y(s) = G(s)U(s)
+  \end{equation}
+
+  Where Y, G, and U are matricies. Each transfer function in G has the same denominator. However, this is not always the most convient representation of the system. \textbf{State-space form} is the transform of system of ODEs of various orders into a larger system of 1st order ODEs.
+
+  \subsection{State Variables}
+
+  State variables form the smallest set of independent variables that completely describe the state of a system. If you know the initial values and input trajectories you can predict the state/output trajectories for the system. \textbf{State variables are independent}, and cannot be expressed as algebraic functions of another and the system inputs. Additionally, \textbf{State variables are not unique} and the number of state variables is equal to the number of initial conditions.
+
+  \subsubsection{Example: Mass-Spring-Damper}
+
+  Given MSD system with $ m = 1, k = 2, c = 1. $
+
+  \[
+      \ddot x + \dot x + 2x = f(t), \Rightarrow \frac{X(s)}{F(s)} = \frac{1}{s ^2 + s + 2}
+    .\]
+
+  This is a second order system, so we need two initial conditions. But what are the states?
+
+  \begin{enumerate}
+    \item Position $ x_1 = x. $
+    \item Velocity $ x_2 = \dot x. $
+  \end{enumerate}
+
+  Initial conditions are only needed for state variables $ x(0) \dot x(0). $
+
+  \subsection{State-Variable Equations}
+
+  There are as many state-variable equations as there are state variables. Each state-variable equation is a \textbf{1st order ODE}.
+
+  \begin{enumerate}
+    \item Left side - derivative of a state variable
+    \item Right side - only a function of state variables, system inputs, maybe time $ t. $
+  \end{enumerate}
+
+  General form,
+
+  \begin{equation}
+    \dot x_i = f_i(x_1, \ldots, x_n, u_1, \ldots, u_n)
+  \end{equation}
+
+  \subsubsection{Example Cont}
+
+  The original ODE can be rearrange in terms of the state variables,
+
+  \[
+      \ddot x + \dot x + 2x = f(t) \Rightarrow \dot x_2 + x_2 + 2x_1 = f(t)
+    .\]
+
+  Where,
+
+  \[
+      x_1 = x, x_2 = \dot x \Rightarrow \dot x_1 = x_2, \dot x_2 = \ddot x
+    .\]
+  This gives us,
+  \[
+      \dot x_2 = -2x_1 - x_2 + f(t), \dot x_1 = x_2
+    .\]
+
+  \section{State equation - Nonlinear}
+
+  In general, the nonlinear state space form is,
+
+  \section{State Equation - Linear}
+
+  If all elements are linear, then the state vector are a linear combination of the states.
+
+  \begin{equation}
+    \dot x = Ax + Bu
+  \end{equation}
+
+  where,
+
+  \begin{itemize}
+    \item State vector $ \dot x. $
+    \item Dynamics matrix $ A. $
+  \end{itemize}
+
+  \subsection{Output Equation}
+
+  Often a system will have many more states than we can measure (or care about knowing). Outputs are things we can measure, or things we want to know.
+
+  Assume that the system has $ p $ outputs (measured outputs), if the outputs are linear we have
+
+  \begin{equation}
+    y = Cx + Du
+  \end{equation}
+
+  where,
+
+  \begin{itemize}
+    \item output matrix $ C. $
+    \item direct transmission matrix $ D. $
+  \end{itemize}
+
+  Note: Outputs are based on what you want to see!
+
+  \section{Transfer Functions to State Space}
+
+  Sometimes it is necessary to go from an input-output form to a state-space form. There is a formal procedure for doing this but it is beyond the scope of the class. We will use MATLAB to perform this conversion whenever necessary. Works for both SISO and MIMO.
+
 \end{document}

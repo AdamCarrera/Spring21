@@ -114,4 +114,68 @@
 
   Equation (\ref{eqn:eom1}) coupled with (\ref{eqn:eom2}) model the coupled tanks of configuration two.
 
+  \begin{equation}
+    \begin{aligned}
+      A_{c, \, 1} \dot h_1 +  C_{d, \, 1} A_{o, \, 1} \sqrt{2gh_1} &= K_p v_p \\
+      A_{c, \, 2} \dot h_2 + C_{d, \, 2} A_{o, \, 2}  \sqrt{2gh_2} &= C_{d, \, 1} A_{o, \, 1}  \sqrt{2gh_1}
+    \end{aligned}
+  \end{equation}
+
+  \subsection{Configuration 3}
+
+  The difference between configuration 2 and configuration 3 is that both tanks receive flow from the pump. This means that tank one is the same as before and the flow of tank two is given by,
+
+  \begin{equation}
+    q_{m, \, out} = \rho C_{d, \, 2} A_{o, \, 2}  \sqrt{2gh_2}
+  \end{equation}
+
+  \begin{equation}
+    q_{m, \, in} = \rho C_{d, \, 1} A_{o, \, 1}  \sqrt{2gh_1} + K_pv_p
+  \end{equation}
+
+  By conservations laws we get that,
+
+  \begin{equation}
+    \rho A_{c, \, 2} \dot h_2 = \rho C_{d, \, 1} A_{o, \, 1}  \sqrt{2gh_1} + K_pv_p - \rho C_{d, \, 2} A_{o, \, 2}  \sqrt{2gh_2}
+  \end{equation}
+  which simplifies to
+  \begin{equation}
+      A_{c, \, 2} \dot h_2 + C_{d, \, 2} A_{o, \, 2}  \sqrt{2gh_2} = C_{d, \, 1} A_{o, \, 1}  \sqrt{2gh_1} + K_pv_p
+  \end{equation}
+
+  Finally, configuation 3 is modeled by the coupled nonlinear ODEs.
+
+  \begin{equation}
+    \begin{aligned}
+      A_{c, \, 1} \dot h_1 +  C_{d, \, 1} A_{o, \, 1} \sqrt{2gh_1} &= K_p v_p \\
+      A_{c, \, 2} \dot h_2 + C_{d, \, 2} A_{o, \, 2}  \sqrt{2gh_2} &= C_{d, \, 1} A_{o, \, 1}  \sqrt{2gh_1} + K_pv_p
+    \end{aligned}
+  \end{equation}
+
+  \section{Unknown System Parameters}
+
+  The EOM for configuration one has 5 parameters that we must account for.
+
+  \begin{enumerate}
+    \item $ A_c, A_o $ - the cross sectional areas of the tank and the orifice can be measured
+    \item $ g $ - the acceleration due to gravity is a well known constant that can be looked up
+    \item $ K_p $ - the pump constant must be determined numerically, as there may be small differences in each pump
+    \item $ C_d $ - the discharge coefficient must be determined numerically, as it depends on the tank setup
+  \end{enumerate}
+
+  \section{Pump Constant Calculation, $ K_p $}
+
+  Given Equation (\ref{eqn:eom1}) and steady state operating condition ($ \dot h = 0 $), we have
+
+  \begin{equation}
+    C_{d, \, 1} A_{o, \, 1} \sqrt{2gh_1} = K_p v_p
+  \end{equation}
+
+  which can be rearranged to determine an expression for $ K_p. $
+
+  \begin{equation}
+    K_p = \frac{C_{d, \, 1} A_{o, \, 1} }{v_p} \sqrt{2gh_1}
+  \end{equation}
+
+
 \end{document}

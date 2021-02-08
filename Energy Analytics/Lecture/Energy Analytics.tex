@@ -22,6 +22,8 @@
 
 \setlength\parindent{0pt}
 
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
 \newcommand{\incfig}[2][1]{%
   \def\svgwidth{#1\columnwidth}
   \import{figures}{#2.pdf_tex}
@@ -226,7 +228,7 @@
 
   \part{Week 3}
 
-  \chapter{Convential Power Generation}
+  \chapter{Conventional Power Generation}
 
   \section{Thermal Power Generation}
 
@@ -396,5 +398,126 @@
 
 
 
+
+  \chapter{Probability \& Distribution}
+
+  \section{Probability Density Function (PDF)}
+
+  Suppose we have some variable $ X \sim f(x) $ where $ f(x) $ is the probability density function (pdf) of $ X. $
+
+  The requirements on $ f(x) $ are:
+
+  \begin{itemize}
+    \item $ f(x) \geq 0  \quad \forall x \in X. $ Where $ X $ is the domain of $ X. $
+    \item $ \int f(x)dx = 1. $
+  \end{itemize}
+
+  The normal distribution pdf has the form,
+
+  \[
+      f(x) = \ddfrac{1}{\sigma \sqrt{2\pi}}e^{- \ddfrac{(x - \mu)^2}{2\sigma ^2}}
+    .\]
+
+  \newpage
+  \section{Standard Normal Distribution}
+
+  If $ X \sim N(0, 1), $ then $ X $ follows a normal distribution.
+
+  \begin{equation}
+    f(x) = \ddfrac{1}{\sqrt{2\pi}}e^{- \ddfrac{x ^2}{2}}
+  \end{equation}
+
+  \begin{figure}
+    \centering
+    \includegraphics{figures/normaldis.jpg}
+    \caption{Standard Normal Distribution}
+  \end{figure}
+
+  \section{Cumulative Distribution Function (CDF)}
+
+  The CDF $ F(x) $ for a discrete random variable $ X $ gives, for any specified number $ x $ the probability $ P(X \leq x). $ Obtained by summing the pdf $ p(y) $ over all possible values $ y $ s.t $ y \leq x. $ The CDF of a continuous random variable gives the same probabilities $ P(X \leq x) $ and is obtained by integrating the pdf $ f(y) $ between minus infinity and x.
+
+  \begin{equation}
+    F(x) = P(X \leq x) = \int_{\infty}^{\infty} f(y)dy
+  \end{equation}
+
+  For each x, F(x) is the area under the density curve to the left of x.
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/cumulativedist.png}
+    \caption{A PDF and associated CDF}
+  \end{figure}
+
+  \subsection{Obtaining PDF from CDF}
+
+  If X is a continuous random variable with pdf $ f(x) $ and cdf $ F(x) $, then at every $ x $ at which the derivative $ F'(x) $ exists,
+
+  \[
+      F'(x) = f(x)
+    .\]
+
+  \begin{table}
+    \centering
+    \caption{Properties of Normal Distribution}
+    \begin{tabular}{c c}
+      PDF & see above section \\
+      CDF & $ \frac{1}{2} \left( 1 + erf \left( \frac{x - \mu}{\sigma\sqrt{2}} \right) \right). $ \\
+      Quantile & $ \mu + \sigma\sqrt{2}erf^-1 (2F - 1). $ \\
+      Mean & $ \mu. $ \\
+      Median & $ \mu. $ \\
+      Mode & $ \mu. $ \\
+      Variance & $ \sigma ^2. $
+    \end{tabular}
+
+  \end{table}
+
+
+  \section{Gamma Distribution}
+
+  PDF:
+
+  \begin{equation}
+    f(x;k,\theta) = \ddfrac{x^{k-1}e^{-\ddfrac{x}{\theta}}}{\theta^k \Gamma(k)}, \quad x, k, \theta > 0
+  \end{equation}
+
+  CDF:
+
+  \begin{equation}
+    F(x;k,\theta) = \int_{0}^{x} f(u;k,\theta)du = \frac{\gamma \left( k, \frac{x}{\theta} \right)}{\Gamma(k)}
+  \end{equation}
+
+  where k is the shape parameter, and $ \theta $ is the scale parameter.
+
+  \begin{figure}
+    \centering
+    \includegraphics{figures/gamma}
+    \caption{Gamma PDF and CDF}
+  \end{figure}
+
+  \section{Weibull Distribution}
+
+  \begin{figure}
+    \centering
+    \normalsize
+    \includegraphics[width=0.5\textwidth]{figures/weibull}
+    \caption{Weibull PDF}
+  \end{figure}
+
+  \section{Problem of Estimation}
+
+  We want to estimate $ f(x) $ or $ F(x) $ from a smaple of data $ \{x_j\}_{j=1}^n. $
+
+  Different approaches
+
+  \begin{enumerate}
+    \item Histogram estimates
+    \item Kernel density estimates
+    \item Single distribution estimates
+  \end{enumerate}
+
+  \section{Single Distribution Estimates}
+
+  Use R package: fitdistrplus. KDE with Gaussian kernel
 
 \end{document}

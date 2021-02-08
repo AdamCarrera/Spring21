@@ -518,6 +518,14 @@ INPUT ./figures//inputoutput.pdf
 INPUT ./figures//inputoutput.pdf
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT ./figures/blockdiagram1.PNG
+INPUT figures/blockdiagram1.PNG
+INPUT ./figures/blockdiagram1.PNG
+INPUT ./figures/blockdiagram1.PNG
+INPUT ./figures/scope1.png
+INPUT figures/scope1.png
+INPUT ./figures/scope1.png
+INPUT ./figures/scope1.png
 INPUT lecture.aux
 INPUT c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

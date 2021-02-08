@@ -388,6 +388,11 @@ INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 OUTPUT Pre-lab 1 - Adam Carrera.pdf
 INPUT c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT Pre-lab 1 - Adam Carrera.aux
 INPUT c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
