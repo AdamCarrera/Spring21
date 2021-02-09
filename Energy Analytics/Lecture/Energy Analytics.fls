@@ -502,8 +502,8 @@ INPUT Energy Analytics.toc
 INPUT Energy Analytics.toc
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-OUTPUT Energy Analytics.toc
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsl12.tfm
+OUTPUT Energy Analytics.toc
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm

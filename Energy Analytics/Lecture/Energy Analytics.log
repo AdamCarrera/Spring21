@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.12)  3 FEB 2021 18:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.12)  8 FEB 2021 18:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -358,7 +358,15 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 43--43
 
 (./Energy Analytics.toc [1
 
-])
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[2])
 \tf@toc=\write3
 \openout3 = `"Energy Analytics.toc"'.
 
@@ -370,11 +378,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[2] [3
+[3] [4
 
 ]
 Lecture 1.
-[4
+[5
 
 ]
 
@@ -384,7 +392,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5]
+[6]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -392,25 +400,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6] [7
+[7] [8
 
 ]
 Lecture 2.
-[8
+[9
 
 ]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[9]
-Overfull \hbox (7.37444pt too wide) in paragraph at lines 155--156
-[]\OT1/cmr/m/n/12 Operation and eco-nomic char-ac-ter-is-tics some-where be-twwen base-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -419,6 +415,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10]
+Overfull \hbox (7.37444pt too wide) in paragraph at lines 155--156
+[]\OT1/cmr/m/n/12 Operation and eco-nomic char-ac-ter-is-tics some-where be-twwen base-
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -435,16 +435,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12]
-Lecture 3.
-[13
-
-] [14
-
-]
-Lecture 4.
-[15
-
-]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -452,7 +442,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16]
+[13]
+Lecture 3.
+[14
+
+] [15
+
+]
+Lecture 4.
+[16
+
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -477,11 +477,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
 Lecture 5.
-[20
+[21
 
 ]
-<figures/normaldis.jpg, id=79, 317.68687pt x 203.25937pt>
+<figures/normaldis.jpg, id=82, 317.68687pt x 203.25937pt>
 File: figures/normaldis.jpg Graphic file (type jpg)
 <use figures/normaldis.jpg>
 Package pdftex.def Info: figures/normaldis.jpg  used on input line 432.
@@ -491,7 +499,7 @@ Overfull \hbox (8.7899pt too wide) in paragraph at lines 436--436
 []\OT1/cmr/bx/n/17.28 Cumulative Dis-tri-bu-tion Func-tion (CDF) 
  []
 
-<figures/cumulativedist.png, id=80, 853.1875pt x 404.51125pt>
+<figures/cumulativedist.png, id=83, 853.1875pt x 404.51125pt>
 File: figures/cumulativedist.png Graphic file (type png)
 <use figures/cumulativedist.png>
 Package pdftex.def Info: figures/cumulativedist.png  used on input line 448.
@@ -503,7 +511,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21 <./figures/normaldis.jpg>]
+[22 <./figures/normaldis.jpg>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -511,13 +519,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22 <./figures/cumulativedist.png>]
-<figures/gamma.jpg, id=88, 311.1625pt x 116.435pt>
+[23 <./figures/cumulativedist.png>]
+<figures/gamma.jpg, id=91, 311.1625pt x 116.435pt>
 File: figures/gamma.jpg Graphic file (type jpg)
 <use figures/gamma.jpg>
 Package pdftex.def Info: figures/gamma.jpg  used on input line 494.
 (pdftex.def)             Requested size: 311.16174pt x 116.43471pt.
-<figures/weibull.jpg, id=89, 293.095pt x 305.14pt>
+<figures/weibull.jpg, id=92, 293.095pt x 305.14pt>
 File: figures/weibull.jpg Graphic file (type jpg)
 <use figures/weibull.jpg>
 Package pdftex.def Info: figures/weibull.jpg  used on input line 503.
@@ -530,7 +538,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23 <./figures/gamma.jpg> <./figures/weibull.jpg>]
+[24 <./figures/gamma.jpg> <./figures/weibull.jpg>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -538,7 +546,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24] (./Energy Analytics.aux) ) 
+[25] [26
+
+]
+Lecture 6.
+[27
+
+] (./Energy Analytics.aux) ) 
 Here is how much of TeX's memory you used:
  6112 strings out of 479304
  85281 string characters out of 5871213
@@ -548,10 +562,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  68i,13n,74p,537b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "Energy Analytics.pdf" (25 pages, 236049 bytes).
+Output written on "Energy Analytics.pdf" (28 pages, 237984 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
+ 143 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

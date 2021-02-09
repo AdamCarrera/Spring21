@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1612400040 "Energy Analytics.tex" "Energy Analytics.pdf" "Energy Analytics" 1612400041
-  "Energy Analytics.aux" 1612400041 7632 64adf958b1af528803103047e78e54b9 "pdflatex"
-  "Energy Analytics.tex" 1612400038 19554 432f34ba52e53647e78135908f15708b ""
-  "Energy Analytics.toc" 1612400041 4055 1c16071fa0b28783498ade9c29345f4f "pdflatex"
+["pdflatex"] 1612829903 "Energy Analytics.tex" "Energy Analytics.pdf" "Energy Analytics" 1612829904
+  "Energy Analytics.aux" 1612829904 8025 086d6fa6ea874b7334da1361f318d5af "pdflatex"
+  "Energy Analytics.tex" 1612829903 20064 c8566afbff2ff914db4d7ee01264180f ""
+  "Energy Analytics.toc" 1612829904 4248 6b6ca677c851aee82fe5ae3b235e8e92 "pdflatex"
   "c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1610494009 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1610494424 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1610494249 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -96,6 +96,6 @@
   "figures/weibull.jpg" 1612396827 11919 7d96a776eeb41e85548bba9a116156dd ""
   (generated)
   "Energy Analytics.aux"
-  "Energy Analytics.pdf"
-  "Energy Analytics.toc"
   "Energy Analytics.log"
+  "Energy Analytics.toc"
+  "Energy Analytics.pdf"
