@@ -57,3 +57,4 @@
 \contentsline {part}{IV\hspace {1em}Week 4}{26}{}%
 \contentsline {chapter}{\numberline {6}Wind Energy Analytics}{27}{}%
 \contentsline {section}{\numberline {6.1}Wind Map Information}{27}{}%
+\contentsline {section}{\numberline {6.2}Discussion}{27}{}%

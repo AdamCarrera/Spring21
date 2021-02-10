@@ -15,11 +15,14 @@
 \renewcommand{\chaptername}{Lecture}
 
 \usepackage{import}
+\usepackage{listings}
 \usepackage{pdfpages}
 \usepackage{transparent}
 \usepackage{xcolor}
 
 \setlength\parindent{0pt}
+
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
 
 \newcommand{\incfig}[2][1]{%
     \def\svgwidth{#1\columnwidth}
@@ -1059,5 +1062,293 @@
   \section{Transfer Functions to State Space}
 
   Sometimes it is necessary to go from an input-output form to a state-space form. There is a formal procedure for doing this but it is beyond the scope of the class. We will use MATLAB to perform this conversion whenever necessary. Works for both SISO and MIMO.
+
+  \part{Week 4}
+
+  \chapter{Matlab and Fluids}
+
+  \section{Eigenvalues}
+
+  For a transfer function, we defined the poles as the roots of the denominator. Same as the roots of the characteristic polynomial.
+
+  \[
+      G(s) = \frac{N(s)}{D(s)} \rightarrow r = \text{roots}(D(s))
+    .\]
+
+  For a state-space model, the polse are equal to the eigenvalues of the state matrix. $ A $ has eigenvalues $ \lambda_1, \lambda_2, \ldots, \lambda_n. $
+
+  Note: For MIMO systems, the same is true for state space and transfer functions, each transfer function has the same denominator and thus the same poles (a system has a single set of poles.)
+
+  \section{MATLAB - LTI Systems}
+
+  We can define the transfer function in matlab below.
+
+  \[
+      G(s) = \frac{1}{5s^2 + 7s + 4}
+    .\]
+
+  Matlab will store the transfer function as a 1x1 tf. (1 input - 1 output transfer function)
+
+  \begin{lstlisting}
+    sys = tf(1, [5,7,4])
+  \end{lstlisting}
+
+  \subsection{State Space}
+
+
+  For state space equations,
+
+  \[
+      \dot x_1 = x_2
+    .\]
+
+  \[
+      \dot x_2 = \frac{1}{5}f(t) - \frac{4}{5}x_1 - \frac{7}{5}x_2
+    .\]
+
+  \[
+    A =\begin{bmatrix}
+        0 & 1\\
+        \frac{-4}{5} & \frac{-7}{5}
+      \end{bmatrix}
+    .\]
+
+  \[
+    B =\begin{bmatrix}
+        0\\
+        \frac{1}{5}
+      \end{bmatrix}
+    .\]
+
+  \[
+    C =\begin{bmatrix}
+      1 & 0
+      \end{bmatrix}
+    .\]
+
+  We can define the system with the following,
+
+  \begin{lstlisting}
+    A = [...]
+    B = [..]
+    C = [..]
+    D = [...]
+    sys = ss(A, B, C ,D)
+  \end{lstlisting}
+
+  It is also an LTI object.
+
+  \subsection{TF to SS}
+
+
+  To convert from transfer function to state-space,
+
+  \begin{lstlisting}
+    num = 1
+    den = [5,7,4]
+    sys = tf(num,den)
+
+    sys_ss = ss(sys)
+  \end{lstlisting}
+
+  \subsubsection{Accessing Matricies}
+
+  All at once,
+
+  \begin{lstlisting}
+    [A,B,C,D] = ssdata(sys_ss)
+  \end{lstlisting}
+
+  One at a time,
+
+  \begin{lstlisting}
+    A = sys_ss.A
+  \end{lstlisting}
+
+  \subsection{SS to TF}
+
+  \begin{lstlisting}
+    sys = ss(A,B,C,D)
+
+    sys_tf = tf(sys)
+  \end{lstlisting}
+
+  \subsubsection{Access Num and Den}
+
+  All at once,
+
+  \begin{lstlisting}
+    [num,den] = tfdata(sys_tf, 'v')
+  \end{lstlisting}
+
+  One at a time,
+
+  \begin{lstlisting}
+    num = cell2mat(sys_tf.num)
+  \end{lstlisting}
+
+  \section{MATLAB - Block Diagram Algebra}
+
+  For blocks in series, if sys1 and sys2 are transfer functions in series they can be combined with
+
+  \begin{lstlisting}
+    sys = series(sys1, sys2)
+  \end{lstlisting}
+
+  For a negative feedback loop, the closed-loop transfer function is
+
+  \begin{lstlisting}
+    sys3 = feedback(sys1, sys2)
+  \end{lstlisting}
+
+  For a positive feed back loop,
+
+  \begin{lstlisting}
+    sys3 = feedback(sys1, sys2, +1)
+  \end{lstlisting}
+
+  \section{MATLAB - Roots}
+
+  When converting from state space to transfer function, the denominator comes from $ (sI-A)^{-1}. $
+
+  \[
+      G(s) = C(sI-A)^{-1}B + D
+    .\]
+
+  We can get the characteristic polynomial from $ A. $
+
+  \begin{lstlisting}
+    A = [0 1; 6 5]
+    poly(A)
+  \end{lstlisting}
+
+  We can also get the roots,
+
+  \begin{lstlisting}
+    roots(poly(A))
+  \end{lstlisting}
+
+  \section{Basic Input Responses}
+
+  Unit impulse response (assumes zeroes for ICs)
+
+  \begin{lstlisting}
+    num = 1;
+    den = [5, 7, 4];
+    sys = tf(num, den);
+
+    impulse(sys);
+
+    # Alternatively,
+
+    [y,t] = impulse(sys);
+    figure;plot(t,y)
+  \end{lstlisting}
+
+  \section{Arbitrary Input Responses}
+
+  Plot the response of the system to an input you define for $ t \in [0, 2] $,
+
+  \[
+      \ddot x + 3\dot x + 5x = 10f(t), \quad f(t) = 1.5t
+    .\]
+
+  \begin{lstlisting}
+    # Define time vector
+    t = linspace(0,2, 300);
+    # 300 values between 0 and 2
+
+    # Define the input
+    f = 1.5*t;
+
+    # Define the system
+    sys = tf(10, [1, 3 ,5]);
+
+    # Calculate the response
+    [y,t] = lsim(sys,f,t);
+
+    figure;plot(t,f,t,y)
+    xlabel('t')
+    ylabel('x(t) and f(t)')
+    xlim([0 2])
+    legend('(t), x(t)')
+  \end{lstlisting}
+
+  Lsim is great for any generic linear input!
+
+  \section{Fluid and Thermal Systems}
+
+  Most systems are goverened by basic conservation laws, a great way to start modeling a system!
+
+  Two important ones are conservation of mass and conservation of energy,
+
+  \begin{equation}
+    \sum m_{in} - \sum m_{out} = m_{stored}
+  \end{equation}
+  (as a rate)
+  \begin{equation}
+    \sum q_{in} - \sum q_{out} = \frac{dm}{dt} = \dot m
+  \end{equation}
+
+  \begin{equation}
+    \sum E_{in} - \sum E_{out} = E_{stored}
+  \end{equation}
+
+  \subsection{Assumptions}
+
+  Flow through a restriction/resistance (e.g. valve) is proportional to the pressure across it. As resistance increases, flow decreases.
+
+  \begin{equation}
+    q = \frac{1}{R}(P_1 - P_2)
+  \end{equation}
+
+  Pressure at the bottom of the tank is proportional to the height of the liquid (hydrostatic pressure)
+
+  \begin{equation}
+    P = \rho gh + P_a
+  \end{equation}
+
+  Constant cross-sectional area (hydraulic capacitance)
+
+  \begin{equation}
+    C = \frac{A}{g}
+  \end{equation}
+
+  \subsection{Hydraulic System Modeling}
+
+  Use the basic assumptions to model the system,
+
+  \[
+      \frac{dm}{dt} = q_{mi} - q_{mo} \text{ (Conservation of mass)}
+    .\]
+
+  \[
+      q_{mo} = \frac{1}{R} \left( P_{bottom} - P_a \right) \text{ (Resistance)}
+    .\]
+
+  \[
+      P_{bottom} = \rho gh + P_a \text{ (Hydrostatic pressure)}
+    .\]
+
+  This gives us,
+
+  \[
+      q_{mo} = \frac{1}{R} \left( \rho gh + P_a - P_a \right) = \frac{\rho g}{R}h
+    .\]
+
+  We want to have the model in terms of the height of the tank, so
+
+  \[
+      m = \rho V = \rho Ah \Rightarrow \frac{dm}{dt} = \rho A \dot h
+    .\]
+
+  Combining these equations, we get that
+
+  \[
+      RC\dot h + h = \frac{R}{\rho g}q_{mi}
+    .\]
+
+
+
 
 \end{document}
