@@ -1351,4 +1351,141 @@
 
 
 
+  \chapter{Fluid Thermal Analysis}
+
+  \section{Fluid Resistance}
+
+  We assumed a linear relationship for flow resistance.
+
+  In general,
+
+  \[
+      R = \frac{d\Delta P}{dq}
+    .\]
+
+  Common, nonlinearity
+
+  \[
+      CdAo\sqrt{\rho(P_1 - P_2)}
+    .\]
+
+  \section{Combination of Fluid REsistance}
+
+  \begin{itemize}
+    \item Series - $ R = R_1 + R_2. $
+    \item Parallel - $ 1/R = 1/R_1 + 1/R_2. $
+  \end{itemize}
+
+  \newpage
+
+  \section{Example - LL System With PRessure Source}
+
+  Given an inlet pressure source, model the height of fluid.
+
+  Inlet flow,
+
+  \[
+      q_{mi} = \frac{1}{R_1} \left[ (\hat p_s + p_a) - p_{bottom} \right]
+    .\]
+
+  Outlet flow,
+
+  \[
+      q_{mo} = \frac{1}{R_2}[p_{bottom} - p_a]
+    .\]
+
+  Combine with conservation equation, mass as a function of height, and hydrostatic pressure.
+
+  \[
+      \frac{AR_1R_2}{g (R_1 + R_2)}
+    .\]
+
+  is the \textbf{time constant}
+
+  \section{Thermal Systems}
+
+  While thermal systems are governed by conservation of mass, thermal systems are goverened by conservation of energy.
+
+  \[
+      \frac{dU}{dt} = \dot Q_{in} - \dot Q_{out}
+    .\]
+
+  Temperature is an indicator of stored thermal energy.
+
+  \[
+      U = mc_pT
+    .\]
+
+  Thermal capacitance
+
+  \[
+      C = \frac{dU}{dT} \Rightarrow C = mc_p = \rho V c_p
+    .\]
+
+  \subsection{Thermal Resisitance}
+
+  Similar to fluid resistance, relates heat transfer to temperature difference.
+
+  \[
+      q = \frac{1}{R} (T_1 - T_2)
+    .\]
+
+  Assume that we know R, we can compute it based on the mode of heat transfer!
+
+  Conduction,
+
+  \[
+      R = \frac{L}{kA_c}
+    .\]
+
+  Convection,
+
+  \[
+      R = \frac{1}{hA_s}
+    .\]
+
+  Radiation,
+
+  \[
+      R = \frac{1}{h_rA_s}
+    .\]
+
+  \section{Lumped-Parameter Assumption}
+
+  Temperature is distributed spatially (function of location) and temporally (function of time). However, this results in dynamics governed by PDEs, which are difficult to control.
+
+  Often, we assume \textbf{lumped-parameters}. Ignore spatial variations and focus on temporal variations. We have the Biot Criterion,
+
+  \begin{equation}
+    Bi = \frac{R_{cond}}{R_{conv}} = \frac{q_{cond}}{q_{conv}} = \frac{hA_s}{kA_c/L} = \frac{hL_c}{k}
+  \end{equation}
+
+  If $ Bi < 0.1 $, the lumped-parameter approximation is good.
+
+  \subsection{Example - Large Bath}
+
+  Quenching in constant temperature bath, if you are given dimensions and materials you can check the Biot Number, $ Bi = 0.02 < 0.1. $
+
+  The energy of object can be represented by a single temp, $ T. $
+
+  Conservation of energy,
+
+  \[
+      \frac{dU}{dt} = \dot Q_{in} - \dot Q_{out}
+    .\]
+
+  \[
+      \dot Q_{in} = 0, \quad \dot Q_{out} = \frac{1}{R}(T - T_b)
+    .\]
+
+  \[
+      mc_p\dot T = -\frac{1}{R}(T - T_b)
+    .\]
+
+  \section{Thermocouple Example}
+
+  We assume thermocouples measure the temperature exactly. However, thermocouples have their own dynamics.
+
+
+
 \end{document}

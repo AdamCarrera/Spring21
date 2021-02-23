@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1612886711 "Energy Analytics.tex" "Energy Analytics.pdf" "Energy Analytics" 1612886712
-  "Energy Analytics.aux" 1612886712 8126 0ed49b22531cb8617f27fea8d5333fd4 "pdflatex"
-  "Energy Analytics.tex" 1612886708 20315 72803e316b154e7705c746bbdc60cc1e ""
-  "Energy Analytics.toc" 1612886712 4308 75beb963312dc27868e3e9323fd4103f "pdflatex"
+["pdflatex"] 1614119435 "Energy Analytics.tex" "Energy Analytics.pdf" "Energy Analytics" 1614119436
+  "Energy Analytics.aux" 1614119436 8617 24df321fa3dab8a6a7a5aa56153e866d "pdflatex"
+  "Energy Analytics.tex" 1614119433 21145 bb2b5de3381ead20e30b8cc992a61716 ""
+  "Energy Analytics.toc" 1614119436 4558 7ce0d390e4862549ed8283ff035c4255 "pdflatex"
   "c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1610494009 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1610494424 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1610494249 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -95,7 +95,7 @@
   "figures/normaldis.jpg" 1612395266 25771 063c7935cd33ac7054ece1f7969d44c0 ""
   "figures/weibull.jpg" 1612396827 11919 7d96a776eeb41e85548bba9a116156dd ""
   (generated)
-  "Energy Analytics.pdf"
   "Energy Analytics.aux"
-  "Energy Analytics.toc"
+  "Energy Analytics.pdf"
   "Energy Analytics.log"
+  "Energy Analytics.toc"

@@ -58,3 +58,7 @@
 \contentsline {chapter}{\numberline {6}Wind Energy Analytics}{27}{}%
 \contentsline {section}{\numberline {6.1}Wind Map Information}{27}{}%
 \contentsline {section}{\numberline {6.2}Discussion}{27}{}%
+\contentsline {section}{\numberline {6.3}Wind Generator Types}{28}{}%
+\contentsline {section}{\numberline {6.4}Offshore Pros and Cons}{28}{}%
+\contentsline {part}{V\hspace {1em}Week 5}{29}{}%
+\contentsline {chapter}{\numberline {7}Turbulence}{30}{}%
