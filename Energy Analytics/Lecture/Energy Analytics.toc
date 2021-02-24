@@ -62,3 +62,9 @@
 \contentsline {section}{\numberline {6.4}Offshore Pros and Cons}{28}{}%
 \contentsline {part}{V\hspace {1em}Week 5}{29}{}%
 \contentsline {chapter}{\numberline {7}Turbulence}{30}{}%
+\contentsline {section}{\numberline {7.1}Wind Energy - Turbulence}{30}{}%
+\contentsline {subsection}{\numberline {7.1.1}Monitoring Data}{30}{}%
+\contentsline {subsection}{\numberline {7.1.2}In and Out of Wake Scenarios}{31}{}%
+\contentsline {subsection}{\numberline {7.1.3}Surrogate Modeling: In-Wake and Out-of-Wake Scenarios}{31}{}%
+\contentsline {subsection}{\numberline {7.1.4}Support Vector Regression}{31}{}%
+\contentsline {subsection}{\numberline {7.1.5}Uncertainty in the Power Response}{31}{}%

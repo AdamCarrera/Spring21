@@ -587,7 +587,77 @@
 
   \chapter{Turbulence}
 
-  
+  \section{Wind Energy - Turbulence}
+
+  Wake loss leads to significant energy loss, about 5 to 20 percent from the whole plant. Turbulence is characterized by ambient and wake turbulence.
+
+  \begin{itemize}
+    \item ambient turbulence - normal turbulence at the site that weould be experienced by one turbine
+    \item wake turublence - caused by upwind turbines shading those downstream
+  \end{itemize}
+
+  How do the turbulence conditions affect wind power differently?
+
+  \subsection{Monitoring Data}
+
+  Using Xcel Cedar Creek wind plant data, we can
+
+  \begin{itemize}
+    \item determine data sets for in and out of wake
+    \item construct surrogate models $ P = f(U), P = f(U, TI). $ (TI - Turbulence Intensity)
+    \item Quantify the uncertainty in turbine power generation
+  \end{itemize}
+
+  \subsection{In and Out of Wake Scenarios}
+
+  Pick one turbine and calculate which turbines are in its wake based on wind direction.
+
+  \subsection{Surrogate Modeling: In-Wake and Out-of-Wake Scenarios}
+
+  For each set of data, two surrogate models were developed to represent the turbine power generation. As a function of wind speed and as a function of both wind speed and turbulence intensity.
+
+  The turbulence intensity is defined as the standard deviation of the wind speed within a short time period divided by the mean wind speed during that time period.
+
+  \begin{equation}
+    TI = \frac{\sigma_U}{U}
+  \end{equation}
+
+  \subsection{Support Vector Regression}
+
+  Surrogate modeling is concerned with the construction of approximation models to estimate system performance and to develop relationships between specific system inputs and outputs.
+
+  \subsection{Uncertainty in the Power Response}
+
+  Once we have our models we can quantify uncertainty.
+
+  The discrepancy between the actual power generation and the power curve estimation of a wind turbine can be attributed to the following major factors:
+
+  \begin{itemize}
+    \item Wind shear - the variation of wind with vertical distance from the ground
+    \item Turbulence effects - the power generation depends on both mean wind speed and turbulence
+    \item Turbine reliability - the uncertainty in the turbine performance
+  \end{itemize}
+
+  We want to illustrate how the uncertainty is different between in and out of wake scenarios. This is measured by the uncertainty with respect to the reported power curve
+
+  \begin{equation}
+    E_{pc} = P_c(U) - P_g(U)
+  \end{equation}
+
+  Where Pc is expected power and Pg is recorded power. Epc is the error of power curve. If we wanted to estimate based on only wind speed we would have. The uncertainty in power generation with respect to estimated power response that only accounts for mean wind speed. \textbf{These are both error distributions.}
+
+  \begin{equation}
+    E_{pf} = P_g(U) - P_f(U)
+  \end{equation}
+
+  Where Pf is the surrogate estimation. Finally, we
+
+
+
+
+
+
+
 
 
 \end{document}
