@@ -1,5 +1,5 @@
 \documentclass[12pt, a4paper]{report}
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath, amssymb, amsfonts}
 \usepackage{fancyhdr}
 %\setlength{\headheight}{15pt}
 \usepackage{geometry}
@@ -15,11 +15,14 @@
 \renewcommand{\chaptername}{Lecture}
 
 \usepackage{import}
+\usepackage{listings}
 \usepackage{pdfpages}
 \usepackage{transparent}
 \usepackage{xcolor}
 
 \setlength\parindent{0pt}
+
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
 
 \newcommand{\incfig}[2][1]{%
     \def\svgwidth{#1\columnwidth}
@@ -879,6 +882,706 @@
   \textbf{Add in the closed loop feedback}
 
 
+
+
+
+
+  \chapter{Block Diagrams}
+
+  \section{Block Diagram from System Model}
+
+  \[
+      3 \dot y + y = 2u
+    .\]
+
+  Take laplace transform and arrange highest power of $ s $ on the left.
+
+  \begin{align}
+    3sY(s) + Y(s) &= 2U(s) \\
+    sY(s) &= \frac{1}{3} \left( 2U(s) - Y(s) \right)
+  \end{align}
+
+  \begin{itemize}
+    \item Draw output signal going to the right
+    \item Draw string of integrators
+    \begin{itemize}
+      \item \# of integrators = highest power of $ s $
+      \item In this case just 1 integrator
+    \end{itemize}
+    \item Draw a gain block corresponding to the common coefficient on the RHS
+    \item Add summation block
+    \item Use existing signals to build up the sum of terms on the RHS
+  \end{itemize}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/blockdiagram1}
+    \caption{Example Block Diagram}
+  \end{figure}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/scope1}
+    \caption{Scope output of 6.1}
+  \end{figure}
+
+  \subsection{Alternative Approach}
+
+  This can be done in the time domain as well.
+
+  \[
+      \ddot x + 2\dot x + 3x = f(t)
+    .\]
+
+  Isolate highest derivative,
+
+  \[
+      \ddot x = f(t) - 2\dot x - 3x
+    .\]
+
+  String integrators to get x, and add terms to compute the highest derivative.
+
+  \section{Transfer Function and the IO equation}
+
+  Can go backwards from tansfer function to ODE.
+
+  \[
+      G(s) = \frac{s + 1}{s ^2 + 3s + 5}
+    .\]
+
+  \[
+      (s ^2 + 3s + 5) Y(s) = (s + 1) U(s)
+    .\]
+
+  \[
+      \ddot y + 3 \dot y + 5y = \dot u + u
+    .\]
+
+  \section{Transfer Function to State-Space}
+
+  For MIMO systems, we have see that the transfer function looks like
+
+  \begin{equation}
+    Y(s) = G(s)U(s)
+  \end{equation}
+
+  Where Y, G, and U are matricies. Each transfer function in G has the same denominator. However, this is not always the most convient representation of the system. \textbf{State-space form} is the transform of system of ODEs of various orders into a larger system of 1st order ODEs.
+
+  \subsection{State Variables}
+
+  State variables form the smallest set of independent variables that completely describe the state of a system. If you know the initial values and input trajectories you can predict the state/output trajectories for the system. \textbf{State variables are independent}, and cannot be expressed as algebraic functions of another and the system inputs. Additionally, \textbf{State variables are not unique} and the number of state variables is equal to the number of initial conditions.
+
+  \subsubsection{Example: Mass-Spring-Damper}
+
+  Given MSD system with $ m = 1, k = 2, c = 1. $
+
+  \[
+      \ddot x + \dot x + 2x = f(t), \Rightarrow \frac{X(s)}{F(s)} = \frac{1}{s ^2 + s + 2}
+    .\]
+
+  This is a second order system, so we need two initial conditions. But what are the states?
+
+  \begin{enumerate}
+    \item Position $ x_1 = x. $
+    \item Velocity $ x_2 = \dot x. $
+  \end{enumerate}
+
+  Initial conditions are only needed for state variables $ x(0) \dot x(0). $
+
+  \subsection{State-Variable Equations}
+
+  There are as many state-variable equations as there are state variables. Each state-variable equation is a \textbf{1st order ODE}.
+
+  \begin{enumerate}
+    \item Left side - derivative of a state variable
+    \item Right side - only a function of state variables, system inputs, maybe time $ t. $
+  \end{enumerate}
+
+  General form,
+
+  \begin{equation}
+    \dot x_i = f_i(x_1, \ldots, x_n, u_1, \ldots, u_n)
+  \end{equation}
+
+  \subsubsection{Example Cont}
+
+  The original ODE can be rearrange in terms of the state variables,
+
+  \[
+      \ddot x + \dot x + 2x = f(t) \Rightarrow \dot x_2 + x_2 + 2x_1 = f(t)
+    .\]
+
+  Where,
+
+  \[
+      x_1 = x, x_2 = \dot x \Rightarrow \dot x_1 = x_2, \dot x_2 = \ddot x
+    .\]
+  This gives us,
+  \[
+      \dot x_2 = -2x_1 - x_2 + f(t), \dot x_1 = x_2
+    .\]
+
+  \section{State equation - Nonlinear}
+
+  In general, the nonlinear state space form is,
+
+  \section{State Equation - Linear}
+
+  If all elements are linear, then the state vector are a linear combination of the states.
+
+  \begin{equation}
+    \dot x = Ax + Bu
+  \end{equation}
+
+  where,
+
+  \begin{itemize}
+    \item State vector $ \dot x. $
+    \item Dynamics matrix $ A. $
+  \end{itemize}
+
+  \subsection{Output Equation}
+
+  Often a system will have many more states than we can measure (or care about knowing). Outputs are things we can measure, or things we want to know.
+
+  Assume that the system has $ p $ outputs (measured outputs), if the outputs are linear we have
+
+  \begin{equation}
+    y = Cx + Du
+  \end{equation}
+
+  where,
+
+  \begin{itemize}
+    \item output matrix $ C. $
+    \item direct transmission matrix $ D. $
+  \end{itemize}
+
+  Note: Outputs are based on what you want to see!
+
+  \section{Transfer Functions to State Space}
+
+  Sometimes it is necessary to go from an input-output form to a state-space form. There is a formal procedure for doing this but it is beyond the scope of the class. We will use MATLAB to perform this conversion whenever necessary. Works for both SISO and MIMO.
+
+  \part{Week 4}
+
+  \chapter{Matlab and Fluids}
+
+  \section{Eigenvalues}
+
+  For a transfer function, we defined the poles as the roots of the denominator. Same as the roots of the characteristic polynomial.
+
+  \[
+      G(s) = \frac{N(s)}{D(s)} \rightarrow r = \text{roots}(D(s))
+    .\]
+
+  For a state-space model, the polse are equal to the eigenvalues of the state matrix. $ A $ has eigenvalues $ \lambda_1, \lambda_2, \ldots, \lambda_n. $
+
+  Note: For MIMO systems, the same is true for state space and transfer functions, each transfer function has the same denominator and thus the same poles (a system has a single set of poles.)
+
+  \section{MATLAB - LTI Systems}
+
+  We can define the transfer function in matlab below.
+
+  \[
+      G(s) = \frac{1}{5s^2 + 7s + 4}
+    .\]
+
+  Matlab will store the transfer function as a 1x1 tf. (1 input - 1 output transfer function)
+
+  \begin{lstlisting}
+    sys = tf(1, [5,7,4])
+  \end{lstlisting}
+
+  \subsection{State Space}
+
+
+  For state space equations,
+
+  \[
+      \dot x_1 = x_2
+    .\]
+
+  \[
+      \dot x_2 = \frac{1}{5}f(t) - \frac{4}{5}x_1 - \frac{7}{5}x_2
+    .\]
+
+  \[
+    A =\begin{bmatrix}
+        0 & 1\\
+        \frac{-4}{5} & \frac{-7}{5}
+      \end{bmatrix}
+    .\]
+
+  \[
+    B =\begin{bmatrix}
+        0\\
+        \frac{1}{5}
+      \end{bmatrix}
+    .\]
+
+  \[
+    C =\begin{bmatrix}
+      1 & 0
+      \end{bmatrix}
+    .\]
+
+  We can define the system with the following,
+
+  \begin{lstlisting}
+    A = [...]
+    B = [..]
+    C = [..]
+    D = [...]
+    sys = ss(A, B, C ,D)
+  \end{lstlisting}
+
+  It is also an LTI object.
+
+  \subsection{TF to SS}
+
+
+  To convert from transfer function to state-space,
+
+  \begin{lstlisting}
+    num = 1
+    den = [5,7,4]
+    sys = tf(num,den)
+
+    sys_ss = ss(sys)
+  \end{lstlisting}
+
+  \subsubsection{Accessing Matricies}
+
+  All at once,
+
+  \begin{lstlisting}
+    [A,B,C,D] = ssdata(sys_ss)
+  \end{lstlisting}
+
+  One at a time,
+
+  \begin{lstlisting}
+    A = sys_ss.A
+  \end{lstlisting}
+
+  \subsection{SS to TF}
+
+  \begin{lstlisting}
+    sys = ss(A,B,C,D)
+
+    sys_tf = tf(sys)
+  \end{lstlisting}
+
+  \subsubsection{Access Num and Den}
+
+  All at once,
+
+  \begin{lstlisting}
+    [num,den] = tfdata(sys_tf, 'v')
+  \end{lstlisting}
+
+  One at a time,
+
+  \begin{lstlisting}
+    num = cell2mat(sys_tf.num)
+  \end{lstlisting}
+
+  \section{MATLAB - Block Diagram Algebra}
+
+  For blocks in series, if sys1 and sys2 are transfer functions in series they can be combined with
+
+  \begin{lstlisting}
+    sys = series(sys1, sys2)
+  \end{lstlisting}
+
+  For a negative feedback loop, the closed-loop transfer function is
+
+  \begin{lstlisting}
+    sys3 = feedback(sys1, sys2)
+  \end{lstlisting}
+
+  For a positive feed back loop,
+
+  \begin{lstlisting}
+    sys3 = feedback(sys1, sys2, +1)
+  \end{lstlisting}
+
+  \section{MATLAB - Roots}
+
+  When converting from state space to transfer function, the denominator comes from $ (sI-A)^{-1}. $
+
+  \[
+      G(s) = C(sI-A)^{-1}B + D
+    .\]
+
+  We can get the characteristic polynomial from $ A. $
+
+  \begin{lstlisting}
+    A = [0 1; 6 5]
+    poly(A)
+  \end{lstlisting}
+
+  We can also get the roots,
+
+  \begin{lstlisting}
+    roots(poly(A))
+  \end{lstlisting}
+
+  \section{Basic Input Responses}
+
+  Unit impulse response (assumes zeroes for ICs)
+
+  \begin{lstlisting}
+    num = 1;
+    den = [5, 7, 4];
+    sys = tf(num, den);
+
+    impulse(sys);
+
+    # Alternatively,
+
+    [y,t] = impulse(sys);
+    figure;plot(t,y)
+  \end{lstlisting}
+
+  \section{Arbitrary Input Responses}
+
+  Plot the response of the system to an input you define for $ t \in [0, 2] $,
+
+  \[
+      \ddot x + 3\dot x + 5x = 10f(t), \quad f(t) = 1.5t
+    .\]
+
+  \begin{lstlisting}
+    # Define time vector
+    t = linspace(0,2, 300);
+    # 300 values between 0 and 2
+
+    # Define the input
+    f = 1.5*t;
+
+    # Define the system
+    sys = tf(10, [1, 3 ,5]);
+
+    # Calculate the response
+    [y,t] = lsim(sys,f,t);
+
+    figure;plot(t,f,t,y)
+    xlabel('t')
+    ylabel('x(t) and f(t)')
+    xlim([0 2])
+    legend('(t), x(t)')
+  \end{lstlisting}
+
+  Lsim is great for any generic linear input!
+
+  \section{Fluid and Thermal Systems}
+
+  Most systems are goverened by basic conservation laws, a great way to start modeling a system!
+
+  Two important ones are conservation of mass and conservation of energy,
+
+  \begin{equation}
+    \sum m_{in} - \sum m_{out} = m_{stored}
+  \end{equation}
+  (as a rate)
+  \begin{equation}
+    \sum q_{in} - \sum q_{out} = \frac{dm}{dt} = \dot m
+  \end{equation}
+
+  \begin{equation}
+    \sum E_{in} - \sum E_{out} = E_{stored}
+  \end{equation}
+
+  \subsection{Assumptions}
+
+  Flow through a restriction/resistance (e.g. valve) is proportional to the pressure across it. As resistance increases, flow decreases.
+
+  \begin{equation}
+    q = \frac{1}{R}(P_1 - P_2)
+  \end{equation}
+
+  Pressure at the bottom of the tank is proportional to the height of the liquid (hydrostatic pressure)
+
+  \begin{equation}
+    P = \rho gh + P_a
+  \end{equation}
+
+  Constant cross-sectional area (hydraulic capacitance)
+
+  \begin{equation}
+    C = \frac{A}{g}
+  \end{equation}
+
+  \subsection{Hydraulic System Modeling}
+
+  Use the basic assumptions to model the system,
+
+  \[
+      \frac{dm}{dt} = q_{mi} - q_{mo} \text{ (Conservation of mass)}
+    .\]
+
+  \[
+      q_{mo} = \frac{1}{R} \left( P_{bottom} - P_a \right) \text{ (Resistance)}
+    .\]
+
+  \[
+      P_{bottom} = \rho gh + P_a \text{ (Hydrostatic pressure)}
+    .\]
+
+  This gives us,
+
+  \[
+      q_{mo} = \frac{1}{R} \left( \rho gh + P_a - P_a \right) = \frac{\rho g}{R}h
+    .\]
+
+  We want to have the model in terms of the height of the tank, so
+
+  \[
+      m = \rho V = \rho Ah \Rightarrow \frac{dm}{dt} = \rho A \dot h
+    .\]
+
+  Combining these equations, we get that
+
+  \[
+      RC\dot h + h = \frac{R}{\rho g}q_{mi}
+    .\]
+
+
+
+
+  \chapter{Fluid Thermal Analysis}
+
+  \section{Fluid Resistance}
+
+  We assumed a linear relationship for flow resistance.
+
+  In general,
+
+  \[
+      R = \frac{d\Delta P}{dq}
+    .\]
+
+  Common, nonlinearity
+
+  \[
+      CdAo\sqrt{\rho(P_1 - P_2)}
+    .\]
+
+  \section{Combination of Fluid REsistance}
+
+  \begin{itemize}
+    \item Series - $ R = R_1 + R_2. $
+    \item Parallel - $ 1/R = 1/R_1 + 1/R_2. $
+  \end{itemize}
+
+  \newpage
+
+  \section{Example - LL System With PRessure Source}
+
+  Given an inlet pressure source, model the height of fluid.
+
+  Inlet flow,
+
+  \[
+      q_{mi} = \frac{1}{R_1} \left[ (\hat p_s + p_a) - p_{bottom} \right]
+    .\]
+
+  Outlet flow,
+
+  \[
+      q_{mo} = \frac{1}{R_2}[p_{bottom} - p_a]
+    .\]
+
+  Combine with conservation equation, mass as a function of height, and hydrostatic pressure.
+
+  \[
+      \frac{AR_1R_2}{g (R_1 + R_2)}
+    .\]
+
+  is the \textbf{time constant}
+
+  \section{Thermal Systems}
+
+  While thermal systems are governed by conservation of mass, thermal systems are goverened by conservation of energy.
+
+  \[
+      \frac{dU}{dt} = \dot Q_{in} - \dot Q_{out}
+    .\]
+
+  Temperature is an indicator of stored thermal energy.
+
+  \[
+      U = mc_pT
+    .\]
+
+  Thermal capacitance
+
+  \[
+      C = \frac{dU}{dT} \Rightarrow C = mc_p = \rho V c_p
+    .\]
+
+  \subsection{Thermal Resisitance}
+
+  Similar to fluid resistance, relates heat transfer to temperature difference.
+
+  \[
+      q = \frac{1}{R} (T_1 - T_2)
+    .\]
+
+  Assume that we know R, we can compute it based on the mode of heat transfer!
+
+  Conduction,
+
+  \[
+      R = \frac{L}{kA_c}
+    .\]
+
+  Convection,
+
+  \[
+      R = \frac{1}{hA_s}
+    .\]
+
+  Radiation,
+
+  \[
+      R = \frac{1}{h_rA_s}
+    .\]
+
+  \section{Lumped-Parameter Assumption}
+
+  Temperature is distributed spatially (function of location) and temporally (function of time). However, this results in dynamics governed by PDEs, which are difficult to control.
+
+  Often, we assume \textbf{lumped-parameters}. Ignore spatial variations and focus on temporal variations. We have the Biot Criterion,
+
+  \begin{equation}
+    Bi = \frac{R_{cond}}{R_{conv}} = \frac{q_{cond}}{q_{conv}} = \frac{hA_s}{kA_c/L} = \frac{hL_c}{k}
+  \end{equation}
+
+  If $ Bi < 0.1 $, the lumped-parameter approximation is good.
+
+  \subsection{Example - Large Bath}
+
+  Quenching in constant temperature bath, if you are given dimensions and materials you can check the Biot Number, $ Bi = 0.02 < 0.1. $
+
+  The energy of object can be represented by a single temp, $ T. $
+
+  Conservation of energy,
+
+  \[
+      \frac{dU}{dt} = \dot Q_{in} - \dot Q_{out}
+    .\]
+
+  \[
+      \dot Q_{in} = 0, \quad \dot Q_{out} = \frac{1}{R}(T - T_b)
+    .\]
+
+  \[
+      mc_p\dot T = -\frac{1}{R}(T - T_b)
+    .\]
+
+  \section{Thermocouple Example}
+
+  We assume thermocouples measure the temperature exactly. However, thermocouples have their own dynamics.
+
+
+
+  \part{Week 5}
+
+  \chapter{Thermal Fluid Examples}
+
+  \section{Lecture 8 Quiz Review}
+
+  Question 1, The height of water in tank 2 affects the height of water in tank 1. A larger height of water in Tank 2 causes the water in tank 1 to increase.
+
+  Question 2, one input two states. Therefore, $ A \in \mathbb{R}^{2x2} \Rightarrow B \in \mathbb{R}^{2x1}. $
+
+  \section{Experimental HTC Example}
+
+  Experimentally determine the convective heat transfer coefficient for a spehre in an air stream. There is a thermocouple at the center of the sphere.
+
+  \[
+      \rho = 8933 kg/m^3, \quad c_p = 389 J/kgK, \quad k = 398 W/m^2K
+    .\]
+
+  Our goal is to model the temperature of the sphere
+  \[
+      T_{\infty} = 27, \quad T(0) = 66
+    .\]
+
+  Convert internal energy to temperature with,
+
+  \[
+      U = mc_pT = \rho Vc_pT
+    .\]
+  Conservation laws,
+  \[
+      \rho Vc_p \dot T = -Q_{out}
+    .\]
+
+  where,
+
+  \[
+      Q_{out} = \frac{1}{R}(T - T_{\infty}), \quad R = \frac{1}{hA_s}
+    .\]
+
+  This gives us,
+
+  \[
+      \rho Vc_P \dot T + hA_sT = hA_s T_{\infty}
+    .\]
+
+  Standard form,
+
+  \[
+      \frac{\rho Vc_p}{hA_s} \dot T + T = T_{\infty}
+    .\]
+
+  What is the time constant?
+
+  \[
+      \tau \dot T + T = T_{\infty}
+    .\]
+
+  where,
+
+  \[
+      \tau = RC = \frac{1}{hA_s}(\rho Vc_p)
+    .\]
+
+  We can identify time constant from our data. After one time constant the temperature has changed by 63\%, after 4 time constants the temperature has changed by 98\%.
+
+  1 time constant,
+
+  \[
+      T(0) - 0.63\Delta T = 41.43 \Rightarrow \tau = 208s
+    .\]
+
+  4 time constants,
+
+  \[
+      T(0) - 0.98\Delta T = 27.78 \Rightarrow 4\tau = 832s
+    .\]
+
+  Sometimes they may be different, so you can take the average of the two. In this example it worked out. Finally,
+
+  \[
+      h = 35.4
+    .\]
+
+  We can check the lumped capacitance approximation too!
+
+  \[
+      Bi = \frac{hL_c}{k} = 1.8 \times 10^{-4} < 0.1
+    .\]
+
+  Great assumption!
+
+  \section{Two-Tank Fluid System}
+
+  
 
 
 

@@ -1,24 +1,24 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.30)  9 FEB 2021 00:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.12)  9 FEB 2021 10:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **"MECH 3340 Assignment 2 - Adam Carrera.tex"
 (./MECH 3340 Assignment 2 - Adam Carrera.tex
-LaTeX2e <2020-10-01> patch level 2
-L3 programming layer <2020-10-27> xparse <2020-03-03> (c:/texlive/2020/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-01-09> xparse <2020-03-03> (c:/texlive/2020/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
 (c:/texlive/2020/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count175
-\c@section=\count176
-\c@subsection=\count177
-\c@subsubsection=\count178
-\c@paragraph=\count179
-\c@subparagraph=\count180
-\c@figure=\count181
-\c@table=\count182
+\c@part=\count177
+\c@section=\count178
+\c@subsection=\count179
+\c@subsubsection=\count180
+\c@paragraph=\count181
+\c@subparagraph=\count182
+\c@figure=\count183
+\c@table=\count184
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
@@ -39,13 +39,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count183
+\inf@bad=\count185
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count184
-\leftroot@=\count185
+\uproot@=\count186
+\leftroot@=\count187
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count186
-\DOTSCASE@=\count187
+\classnum@=\count188
+\DOTSCASE@=\count189
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -54,15 +54,15 @@ LaTeX Info: Redefining \cdots on input line 620.
 \big@size=\dimen141
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count188
-\c@MaxMatrixCols=\count189
+\macc@depth=\count190
+\c@MaxMatrixCols=\count191
 \dotsspace@=\muskip16
-\c@parentequation=\count190
-\dspbrk@lvl=\count191
+\c@parentequation=\count192
+\dspbrk@lvl=\count193
 \tag@help=\toks16
-\row@=\count192
-\column@=\count193
-\maxfields@=\count194
+\row@=\count194
+\column@=\count195
+\maxfields@=\count196
 \andhelp@=\toks17
 \eqnshift@=\dimen142
 \alignsep@=\dimen143
@@ -99,20 +99,20 @@ Package: amsthm 2020/05/29 v2.20.6
 ) (c:/texlive/2020/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
 ) (c:/texlive/2020/texmf-dist/tex/latex/pdfpages/pdfpages.sty
-Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
+Package: pdfpages 2021/01/09 v0.5r Insert pages of external PDF documents (AM)
  (c:/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ) (c:/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count195
-\calc@Bcount=\count196
+\calc@Acount=\count197
+\calc@Bcount=\count198
 \calc@Adimen=\dimen148
 \calc@Bdimen=\dimen149
 \calc@Askip=\skip55
 \calc@Bskip=\skip56
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count197
+\calc@Ccount=\count199
 \calc@Cskip=\skip57
 ) (c:/texlive/2020/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
@@ -157,13 +157,14 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 \AM@pagewidth=\dimen154
 \AM@pageheight=\dimen155
  (c:/texlive/2020/texmf-dist/tex/latex/pdfpages/pppdftex.def
-File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
+File: pppdftex.def 2021/01/09 v0.5r Pdfpages driver for pdfTeX (AM)
 )
+\pdfpages@includegraphics@status=\count266
 \AM@pagebox=\box49
 \AM@global@opts=\toks27
-\AM@pagecnt=\count198
+\AM@pagecnt=\count267
 \AM@toc@title=\toks28
-\c@AM@survey=\count199
+\c@AM@survey=\count268
 \AM@templatesizebox=\box50
 ) (c:/texlive/2020/texmf-dist/tex/latex/transparent/transparent.sty
 Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
@@ -172,7 +173,7 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 ) (c:/texlive/2020/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )) (c:/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
+Package: fancyhdr 2021/01/04 v4.0 Extensive control of page headers and footers
 \f@nch@headwidth=\skip58
 \f@nch@O@elh=\skip59
 \f@nch@O@erh=\skip60
@@ -194,8 +195,8 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \titlewidthlast=\dimen159
 \titlewidthfirst=\dimen160
 ) (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count266
+File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count269
 \l__pdf_internal_box=\box52
 ) (./MECH 3340 Assignment 2 - Adam Carrera.aux)
 \openout1 = `"MECH 3340 Assignment 2 - Adam Carrera.aux"'.
@@ -216,16 +217,16 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
 LaTeX Font Info:    ... okay on input line 39.
  (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count267
+\scratchcounter=\count270
 \scratchdimen=\dimen161
 \scratchbox=\box53
-\nofMPsegments=\count268
-\nofMParguments=\count269
+\nofMPsegments=\count271
+\nofMParguments=\count272
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count270
+\MPscratchCnt=\count273
 \MPscratchDim=\dimen162
-\MPnumerator=\count271
-\makeMPintoPDFobject=\count272
+\MPnumerator=\count274
+\makeMPintoPDFobject=\count275
 \everyMPtoPDFconversion=\toks31
 ) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -250,25 +251,110 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
-Make it at least 14.49998pt.
-We now make it that large for the rest of the document.
-This may cause the page layout to be inconsistent, however.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[2] [3] [4] [5] [6] [7] [8] (./MECH 3340 Assignment 2 - Adam Carrera.aux) ) 
+[2]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7]
+<figures/rpk.png, id=36, 211.54031pt x 487.06969pt>
+File: figures/rpk.png Graphic file (type png)
+<use figures/rpk.png>
+Package pdftex.def Info: figures/rpk.png  used on input line 371.
+(pdftex.def)             Requested size: 211.53978pt x 487.06848pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9 <./figures/rpk.PNG>]
+<figures/rootsandpoles.png, id=45, 200.24812pt x 411.03563pt>
+File: figures/rootsandpoles.png Graphic file (type png)
+<use figures/rootsandpoles.png>
+Package pdftex.def Info: figures/rootsandpoles.png  used on input line 404.
+(pdftex.def)             Requested size: 200.24763pt x 411.03462pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[11 <./figures/rootsandpoles.PNG>] (./MECH 3340 Assignment 2 - Adam Carrera.aux) ) 
 Here is how much of TeX's memory you used:
- 4203 strings out of 479485
- 56793 string characters out of 5875915
- 345641 words of memory out of 5000000
- 21157 multiletter control sequences out of 15000+600000
- 543544 words of font info for 62 fonts, out of 8000000 for 9000
+ 4277 strings out of 479304
+ 58044 string characters out of 5871213
+ 353601 words of memory out of 5000000
+ 21408 multiletter control sequences out of 15000+600000
+ 411886 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,12n,85p,280b,222s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,12n,88p,305b,224s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on "MECH 3340 Assignment 2 - Adam Carrera.pdf" (8 pages, 117236 bytes).
+Output written on "MECH 3340 Assignment 2 - Adam Carrera.pdf" (11 pages, 129159 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

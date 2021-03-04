@@ -22,6 +22,8 @@
 
 \setlength\parindent{0pt}
 
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
 \newcommand{\incfig}[2][1]{%
   \def\svgwidth{#1\columnwidth}
   \import{figures}{#2.pdf_tex}
@@ -226,7 +228,7 @@
 
   \part{Week 3}
 
-  \chapter{Convential Power Generation}
+  \chapter{Conventional Power Generation}
 
   \section{Thermal Power Generation}
 
@@ -391,6 +393,397 @@
     \item Flas steam (180 C)
     \item Binary Cycle (60 C)
   \end{itemize}
+
+
+
+
+
+
+  \chapter{Probability \& Distribution}
+
+  \section{Probability Density Function (PDF)}
+
+  Suppose we have some variable $ X \sim f(x) $ where $ f(x) $ is the probability density function (pdf) of $ X. $
+
+  The requirements on $ f(x) $ are:
+
+  \begin{itemize}
+    \item $ f(x) \geq 0  \quad \forall x \in X. $ Where $ X $ is the domain of $ X. $
+    \item $ \int f(x)dx = 1. $
+  \end{itemize}
+
+  The normal distribution pdf has the form,
+
+  \[
+      f(x) = \ddfrac{1}{\sigma \sqrt{2\pi}}e^{- \ddfrac{(x - \mu)^2}{2\sigma ^2}}
+    .\]
+
+  \newpage
+  \section{Standard Normal Distribution}
+
+  If $ X \sim N(0, 1), $ then $ X $ follows a normal distribution.
+
+  \begin{equation}
+    f(x) = \ddfrac{1}{\sqrt{2\pi}}e^{- \ddfrac{x ^2}{2}}
+  \end{equation}
+
+  \begin{figure}
+    \centering
+    \includegraphics{figures/normaldis.jpg}
+    \caption{Standard Normal Distribution}
+  \end{figure}
+
+  \section{Cumulative Distribution Function (CDF)}
+
+  The CDF $ F(x) $ for a discrete random variable $ X $ gives, for any specified number $ x $ the probability $ P(X \leq x). $ Obtained by summing the pdf $ p(y) $ over all possible values $ y $ s.t $ y \leq x. $ The CDF of a continuous random variable gives the same probabilities $ P(X \leq x) $ and is obtained by integrating the pdf $ f(y) $ between minus infinity and x.
+
+  \begin{equation}
+    F(x) = P(X \leq x) = \int_{\infty}^{\infty} f(y)dy
+  \end{equation}
+
+  For each x, F(x) is the area under the density curve to the left of x.
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/cumulativedist.png}
+    \caption{A PDF and associated CDF}
+  \end{figure}
+
+  \subsection{Obtaining PDF from CDF}
+
+  If X is a continuous random variable with pdf $ f(x) $ and cdf $ F(x) $, then at every $ x $ at which the derivative $ F'(x) $ exists,
+
+  \[
+      F'(x) = f(x)
+    .\]
+
+  \begin{table}
+    \centering
+    \caption{Properties of Normal Distribution}
+    \begin{tabular}{c c}
+      PDF & see above section \\
+      CDF & $ \frac{1}{2} \left( 1 + erf \left( \frac{x - \mu}{\sigma\sqrt{2}} \right) \right). $ \\
+      Quantile & $ \mu + \sigma\sqrt{2}erf^-1 (2F - 1). $ \\
+      Mean & $ \mu. $ \\
+      Median & $ \mu. $ \\
+      Mode & $ \mu. $ \\
+      Variance & $ \sigma ^2. $
+    \end{tabular}
+
+  \end{table}
+
+
+  \section{Gamma Distribution}
+
+  PDF:
+
+  \begin{equation}
+    f(x;k,\theta) = \ddfrac{x^{k-1}e^{-\ddfrac{x}{\theta}}}{\theta^k \Gamma(k)}, \quad x, k, \theta > 0
+  \end{equation}
+
+  CDF:
+
+  \begin{equation}
+    F(x;k,\theta) = \int_{0}^{x} f(u;k,\theta)du = \frac{\gamma \left( k, \frac{x}{\theta} \right)}{\Gamma(k)}
+  \end{equation}
+
+  where k is the shape parameter, and $ \theta $ is the scale parameter.
+
+  \begin{figure}
+    \centering
+    \includegraphics{figures/gamma}
+    \caption{Gamma PDF and CDF}
+  \end{figure}
+
+  \section{Weibull Distribution}
+
+  \begin{figure}
+    \centering
+    \normalsize
+    \includegraphics[width=0.5\textwidth]{figures/weibull}
+    \caption{Weibull PDF}
+  \end{figure}
+
+  \section{Problem of Estimation}
+
+  We want to estimate $ f(x) $ or $ F(x) $ from a smaple of data $ \{x_j\}_{j=1}^n. $
+
+  Different approaches
+
+  \begin{enumerate}
+    \item Histogram estimates
+    \item Kernel density estimates
+    \item Single distribution estimates
+  \end{enumerate}
+
+  \section{Single Distribution Estimates}
+
+  Use R package: fitdistrplus. KDE with Gaussian kernel
+
+  \part{Week 4}
+
+  \chapter{Wind Energy Analytics}
+
+  \section{Wind Map Information}
+
+  \begin{itemize}
+    \item Wind map is digitized using image processing tools
+    \item Total area under different average wind speeds (AWS) is estimated with an interval of 0.5 m/s
+    \item A normal distribution is fitted to represent the geographical distribution of average wind speeds over contiguous USA
+  \end{itemize}
+
+  \[
+      \mu = 5.6 \text{ m/s}, \quad \sigma = 1.3 \text{ m/s}
+    .\]
+
+  \section{Discussion}
+
+  What are the five largest wind turbine manufacturers in terms of global market share?
+
+  \begin{itemize}
+    \item Goldwind
+    \item Vestas
+    \item GE Wind
+    \item Siemens
+    \item Gamesa
+  \end{itemize}
+
+  \section{Wind Generator Types}
+
+  \begin{itemize}
+    \item Type 1 - Fixed-speed wind turbine
+    \item Type 2 - Variable-slip wind turbine
+    \item Type 3 - Pitch controlled wind rotor
+    \item Type 4 - Full converter wind turbine
+  \end{itemize}
+
+  Type 1 has a squirell cage induction generator, type two has a wound rotor induction generator and a control signal.
+
+  \section{Offshore Pros and Cons}
+
+  Advantages
+
+  \begin{itemize}
+    \item Generally higher capacity factors
+    \item Less visual impact
+    \item Often closer to load centers
+    \item Better correlation with load in some locations
+  \end{itemize}
+
+  Disadvantages
+
+  \begin{itemize}
+    \item Higher installation costs
+    \item Maintenance issues
+  \end{itemize}
+
+
+
+
+
+
+
+  \part{Week 5}
+
+  \chapter{Turbulence}
+
+  \section{Wind Energy - Turbulence}
+
+  Wake loss leads to significant energy loss, about 5 to 20 percent from the whole plant. Turbulence is characterized by ambient and wake turbulence.
+
+  \begin{itemize}
+    \item ambient turbulence - normal turbulence at the site that weould be experienced by one turbine
+    \item wake turublence - caused by upwind turbines shading those downstream
+  \end{itemize}
+
+  How do the turbulence conditions affect wind power differently?
+
+  \subsection{Monitoring Data}
+
+  Using Xcel Cedar Creek wind plant data, we can
+
+  \begin{itemize}
+    \item determine data sets for in and out of wake
+    \item construct surrogate models $ P = f(U), P = f(U, TI). $ (TI - Turbulence Intensity)
+    \item Quantify the uncertainty in turbine power generation
+  \end{itemize}
+
+  \subsection{In and Out of Wake Scenarios}
+
+  Pick one turbine and calculate which turbines are in its wake based on wind direction.
+
+  \subsection{Surrogate Modeling: In-Wake and Out-of-Wake Scenarios}
+
+  For each set of data, two surrogate models were developed to represent the turbine power generation. As a function of wind speed and as a function of both wind speed and turbulence intensity.
+
+  The turbulence intensity is defined as the standard deviation of the wind speed within a short time period divided by the mean wind speed during that time period.
+
+  \begin{equation}
+    TI = \frac{\sigma_U}{U}
+  \end{equation}
+
+  \subsection{Support Vector Regression}
+
+  Surrogate modeling is concerned with the construction of approximation models to estimate system performance and to develop relationships between specific system inputs and outputs.
+
+  \subsection{Uncertainty in the Power Response}
+
+  Once we have our models we can quantify uncertainty.
+
+  The discrepancy between the actual power generation and the power curve estimation of a wind turbine can be attributed to the following major factors:
+
+  \begin{itemize}
+    \item Wind shear - the variation of wind with vertical distance from the ground
+    \item Turbulence effects - the power generation depends on both mean wind speed and turbulence
+    \item Turbine reliability - the uncertainty in the turbine performance
+  \end{itemize}
+
+  We want to illustrate how the uncertainty is different between in and out of wake scenarios. This is measured by the uncertainty with respect to the reported power curve
+
+  \begin{equation}
+    E_{pc} = P_c(U) - P_g(U)
+  \end{equation}
+
+  Where Pc is expected power and Pg is recorded power. Epc is the error of power curve. If we wanted to estimate based on only wind speed we would have. The uncertainty in power generation with respect to estimated power response that only accounts for mean wind speed. \textbf{These are both error distributions.}
+
+  \begin{equation}
+    E_{pf} = P_g(U) - P_f(U)
+  \end{equation}
+
+  Where Pf is the surrogate estimation. Finally, we
+
+
+
+
+
+
+
+
+
+
+
+  \chapter{Regression}
+
+  For the homework, only one year of site B data has been given. You will need to compare the accuracy of your MCP methods based on the data. You can use 11 months for correlation and the rest of the months for validation. Review MCP slides on training and validation.
+
+  The book has some helpful material! Chapter 5: Time series regression methods.
+
+  \section{Correlation}
+
+  Correlation coefficients are used to measure the strength of the relationship between two variables.
+
+  \begin{equation}
+    r = \frac{\sum (x_t - \bar x)(y_t - \bar y)}{\sqrt{\sum (x_t - \bar x)^2(y_t - \bar y)^2}}
+  \end{equation}
+
+  xt is the value at the time, x bar is the mean value of the data. R will lie in between -1 and 1, where a value of 1 indicates perfect positive correlation. Note that correlation values can have many different visual representations. Y should be a function of some variable that has a higher correlation coefficient with the target variable
+
+  \subsection{Autocorrelation}
+
+  Autocorrelation measures the linear relationship between lagged values of a time series. The correlation coefficient is calculated for different amounts of time delay. This is important for forcasting future events. If the historic data has a high correlation with the future event, it will be easier for you to make an accurate forcast.
+
+  \section{Time Series Regression Models}
+
+  Basically, we forecast the time series of interest y, assuming that it has a linear relationship with other time series x. The forecsat variable y is sometimes also called the regressand, dependent, or explained variable. The predictor variables x are someteiems called the regressors, independent or explanatory variables.
+
+  \subsection{Linear Model}
+
+  Simplest case is the linear relationship.
+
+  \begin{equation}
+    y_t = \beta_0 + \beta_1 x_t + \epsilon_t
+  \end{equation}
+
+  $ \beta_0, \beta_1 $ are the intercept and slope of the line. Epsilon is the error.
+
+  Note,
+
+  \[
+      \beta_0 + \beta_1 x_t \equiv \hat y
+    .\]
+
+  Plot the points, draw the line!
+
+  \subsection{Multiple linear regression}
+
+  Two or more predictor variables.
+
+  \begin{equation}
+    y_t = \beta_0 + \beta_1 x_{1,t} + \beta_2 x_{2,t} + \ldots + \beta_k  x_{k,t} + \epsilon_t
+  \end{equation}
+
+  Each predictor varaible must be a numerical value. Each coefficient measures the effect of each predictor after taking into account the effects of all the other predictors in the model. Thus, the coefficients measrue the marginal effects of the predictor variables.
+
+  \section{Data Fitting}
+
+  Data fitting is the process of constructing a mathematical function to fit to a series of data points. Data poitns can be experiment results, simulation results, or observations of phenomena. There are many methods for dta fitting. The least-squares appraoch, which requires the use of optimization is introduced here.
+
+  \subsection{Least squares estimation}
+
+  We need to estimate $ \beta $ coefficients. Least squares helps us choose those by minimizing the sum of the squared errors. Lots of machine learning problems use this.
+
+  \begin{equation}
+    \min \sum_{t=1}^T \epsilon_t^2 = \min \sum_{t=1}^T (y_t - \beta_0 - \beta_1 x_{1,t} - \beta_2 x_{2,t} - \ldots - \beta_k  x_{k,t})^2
+  \end{equation}
+
+  \subsection{Mathematical Example}
+
+  In most cases we will not be able to find all of our unknowns to solve the system of equations. Can even have millions of design variables. Least squares can be used to solve these types of problems! The curve will be very close to all of the points, but will not have all of them.
+
+  \section{Goodness of fit}
+
+  To test how well the linear regression model fits, we find the coefficient of determination.
+
+  \begin{equation}
+    R^2 = \frac{\sum (\hat y_t - \bar y)^2}{\sum(y_t - \bar y)^2}
+  \end{equation}
+
+  $ R^2 $ will lie in between 0 and 1. If the predictions are close to the actual values, we would expect $ R^2 $ to be close to 1.
+
+  \section{Nonlinear Regression}
+
+  Linear regression is used alot, but in practice most problems are non-linear. The simplest way of modeling a nonlinear relationship is to transform the forecast variable y and/or the predictor variable x before estimating a regression model. While this provides a non-linear functional form, the model is still linear in the parameters. THe most commonly used transformation is the natural logarithm.
+
+  A log-log functional form is specified as,
+
+  \begin{equation}
+    \log y = \beta_0 + \beta_1 \log x + \epsilon
+  \end{equation}
+
+  \section{Support Vector Regression}
+
+  Surrogate modeling is concerned with the construction of approximation models to estimate the system performance and to develop relationships between specific inputs and outputs.
+
+  SVR is a regression method to construct smooth, nonlinear, regression approximations by formulating the surrogate model construction probelm as a quadratic programming problem.
+
+  \subsection{Radial Basis Function}
+
+  Expresses surrogate models as linear combinations of aparticular type of bassi function $ \psi(r). $ Each constituent bassi function is defined in terms of the Euclidean distance (r) between a training point and the poitn of evaluation. (r) can be expressed as
+
+  \begin{equation}
+    r = ||x - x_i||
+  \end{equation}
+
+  x is the point of evaluation, $ x_i $ is the ith training point. The RBF model is then expressed as a linear combination of the basis functions across all training points.
+
+  \begin{equation}
+    \tilde h(x) = \sum_{i=1}^{m}\omega_i \psi \left( ||x - x_i|| \right)
+  \end{equation}
+
+  $ \omega_i $ are the generic weights of the basis functions which are determined by training. $ \Psi $ is a matrix of the basis function values at the training poitns. and $ W $ is a vector containing the weights. $ Y $ is a vector of the function values at the training points. The weights $ \omega_i $ are found by solving.
+
+  \begin{equation}
+    \Psi W = Y
+  \end{equation}
+
+  RBFs are essentially interpolating functions. A trained RBF model will pass through all the training points.
+
+
+
+
+
+
+
 
 
 

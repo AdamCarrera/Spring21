@@ -1,0 +1,135 @@
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/speeddensity08}
+  \caption{Wind Speed Density - 2008}
+  \label{fig:dist1}
+\end{figure}
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/powerdensity2008}
+  \caption{Wind Power Density - 2008}
+  \label{fig:pwr1}
+\end{figure}
+
+\subsection{Distribution Fitting - 2008}
+
+We have densities for both wind speed and wind power. Using R we will test fits of various distributions to find the one that fits the best. The distributions we will be testing are the Weibull, lognormal, and gamma distributions.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/denscomp08}
+  \caption{Density Comparison, windspeed 2008 - Weibull, lognormal, and gaussian distributions are fitted and compared against the empirical data}
+  \label{fig:denscomp08}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=0.45\textwidth]{figures/cdfcomp08}
+  \caption{CDF Comparison, windspeed 2008 - Weibull, lognormal, and gaussian distributions are fitted and compared against the empirical data}
+  \label{fig:cdfcomp08}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/qq08}
+  \caption{Q-Q plot}
+  \label{fig:qq08}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=0.45\textwidth]{figures/PP08}
+  \caption{P-P plot}
+  \label{fig:pp08}
+ \end{figure}
+
+Figs. 7 - 10 show the comparison between 3 different distributions. Visually, it appears that the Weibull distribution most accurately represents the empirical data. Numerically, we can see how the different distributions compare with the goodness of fit statistic.
+
+
+
+
+
+\subsection{Distribution for 2009 - Speed and Power}
+
+Fig. \ref{fig:dist2} shows the wind speed density for the year 2009. Visually, the density is similar to 2008, with the most likely values in between 5 and 10 m/s.
+
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/speeddensity09}
+  \caption{Wind Speed Density - 2009}
+  \label{fig:dist2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/powerdensity09}
+  \caption{Wind Power Density - 2009}
+  \label{fig:pwr2}
+\end{figure}
+
+
+
+\subsection{Distribution for 2010 - Speed and Power}
+
+Fig. \ref{fig:dist3} shows the wind speed density for the year 2010. It seems that the average wind speed has increased this year.
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/speeddensity10}
+  \caption{Wind Speed Density - 2010}
+  \label{fig:dist3}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=0.45\textwidth]{figures/powerdensity2010}
+  \caption{Wind Power Density - 2010}
+  \label{fig:pwr3}
+\end{figure}
+
+\subsection{Distribution for 2011 - Speed and Power}
+
+Fig. \ref{fig:dist5} shows the wind speed density for 2011. Visually, it is similar to the previous year.
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/speeddensity11}
+  \caption{Wind Speed Density - 2011}
+  \label{fig:dist4}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/powerdensity2011}
+  \caption{Wind Power Density - 2011}
+  \label{fig:pwr4}
+\end{figure}
+
+\subsection{Distribution for 2012 - Speed and Power}
+
+Fig. \ref{fig:dist5} shows the wind speed density for 2012. Visually, it is similar to the previous year.
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/speeddensity12}
+  \caption{Wind Speed Density - 2012}
+  \label{fig:dist5}
+\end{figure}
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/powerdensity2012}
+  \caption{Wind Power Density - 2012}
+  \label{fig:pwr5}
+\end{figure}
+
+
+__________________________________________________________________________________
+
+the Normal, Cauchy, and Logis distributions. Fig. \ref{fig:comp3} shows how the distributions fit to the empiricial data. Note that none of the distributions fit very well, as the power distribution is quite different from the wind distribution. Rather than the most likely values being in the center of the distribution, the most likely values are at the edges of the distribution. To more accurately model the power distribution, we will use a Gaussian Mixture Model.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/5yearcomparisonpower}
+  \caption{Histogram and Theoretical Densities, 5 year wind power distribution}
+  \label{fig:comp3}
+\end{figure}
