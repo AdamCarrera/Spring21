@@ -35,7 +35,7 @@
 
 \author{Adam Carrera}
 \date{February 24 , 2021}
-\title{MECH 3340 - Assignment \#3}
+\title{MECH 3340 - Assignment \#4}
 
 \begin{document}
   \maketitle
@@ -231,6 +231,103 @@
       1/4 \\ 1/12
     \end{bmatrix}
   \end{equation}
+
+  \section{}
+
+  \subsection{Part A}
+
+  The conservation of energy for each part of the system is
+
+  \begin{equation}
+    \frac{dU_1}{dt} = q_i - q_1
+  \end{equation}
+
+  \begin{equation}
+    \frac{dU_2}{dt} = q_1 - q_o
+  \end{equation}
+
+  where,
+
+  \begin{equation}
+    \frac{dU_i}{dt} = C_i \dot T_i
+  \end{equation}
+
+  \begin{equation}
+    q_1 = \frac{1}{R_1} (T_1 - T_2)
+  \end{equation}
+
+  \begin{equation}
+    q_o = \frac{1}{R_2} (T_2 - T_o)
+  \end{equation}
+
+  This gives us the system,
+
+  \begin{equation}
+    \begin{aligned}
+      C_1 \dot T_1 &= q_i - \frac{1}{R_1} (T_1 - T_2) \\
+      C_2 \dot T_2 &= \frac{1}{R_1} (T_1 - T_2) - \frac{1}{R_2} (T_2 - T_o)
+    \end{aligned}
+  \end{equation}
+
+  Which we can simplify,
+
+  \begin{equation}
+    \begin{aligned}
+      \dot T_1 &= \frac{1}{C_1}q_i - \frac{1}{R_1C_1}T_1 + \frac{1}{R_1C_1}T_2 \\
+      \dot T_2 &= \frac{1}{R_1C_2}T_1 - \left( \frac{1}{R_1C_2} + \frac{1}{R_2C_2} \right)T_2 + \frac{1}{R_2C_2}T_o
+    \end{aligned}
+  \end{equation}
+
+  State space form,
+
+  \begin{equation}
+    \dot T =
+    \begin{bmatrix}
+      - \ddfrac{1}{R_1C_1} & \ddfrac{1}{R_1C_1} \\
+      \ddfrac{1}{R_1C_2} & \left( \ddfrac{1}{R_1C_2} + \ddfrac{1}{R_2C_2} \right)
+    \end{bmatrix} T +
+    \begin{bmatrix}
+      \ddfrac{1}{C_1} & 0 \\ 0 & \ddfrac{1}{R_2C_2}
+    \end{bmatrix}
+    \begin{bmatrix}
+      q_i \\ T_o
+    \end{bmatrix}
+  \end{equation}
+
+  \begin{equation}
+    y =
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{bmatrix}T
+  \end{equation}
+
+  \subsection{Part B}
+
+  Simplified state space model
+
+  \begin{equation}
+    \dot T =
+    \begin{bmatrix}
+      -1 & 1 \\
+      1 & 2
+    \end{bmatrix} T +
+    \begin{bmatrix}
+      1 & 0\\0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      q_i \\ T_o
+    \end{bmatrix}
+  \end{equation}
+
+  \begin{equation}
+    y =
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{bmatrix}T
+  \end{equation}
+
 
 
 \end{document}
