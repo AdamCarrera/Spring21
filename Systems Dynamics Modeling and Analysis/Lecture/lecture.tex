@@ -1,5 +1,5 @@
 \documentclass[12pt, a4paper]{report}
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath, amssymb, amsfonts}
 \usepackage{fancyhdr}
 %\setlength{\headheight}{15pt}
 \usepackage{geometry}
@@ -1485,6 +1485,103 @@
   \section{Thermocouple Example}
 
   We assume thermocouples measure the temperature exactly. However, thermocouples have their own dynamics.
+
+
+
+  \part{Week 5}
+
+  \chapter{Thermal Fluid Examples}
+
+  \section{Lecture 8 Quiz Review}
+
+  Question 1, The height of water in tank 2 affects the height of water in tank 1. A larger height of water in Tank 2 causes the water in tank 1 to increase.
+
+  Question 2, one input two states. Therefore, $ A \in \mathbb{R}^{2x2} \Rightarrow B \in \mathbb{R}^{2x1}. $
+
+  \section{Experimental HTC Example}
+
+  Experimentally determine the convective heat transfer coefficient for a spehre in an air stream. There is a thermocouple at the center of the sphere.
+
+  \[
+      \rho = 8933 kg/m^3, \quad c_p = 389 J/kgK, \quad k = 398 W/m^2K
+    .\]
+
+  Our goal is to model the temperature of the sphere
+  \[
+      T_{\infty} = 27, \quad T(0) = 66
+    .\]
+
+  Convert internal energy to temperature with,
+
+  \[
+      U = mc_pT = \rho Vc_pT
+    .\]
+  Conservation laws,
+  \[
+      \rho Vc_p \dot T = -Q_{out}
+    .\]
+
+  where,
+
+  \[
+      Q_{out} = \frac{1}{R}(T - T_{\infty}), \quad R = \frac{1}{hA_s}
+    .\]
+
+  This gives us,
+
+  \[
+      \rho Vc_P \dot T + hA_sT = hA_s T_{\infty}
+    .\]
+
+  Standard form,
+
+  \[
+      \frac{\rho Vc_p}{hA_s} \dot T + T = T_{\infty}
+    .\]
+
+  What is the time constant?
+
+  \[
+      \tau \dot T + T = T_{\infty}
+    .\]
+
+  where,
+
+  \[
+      \tau = RC = \frac{1}{hA_s}(\rho Vc_p)
+    .\]
+
+  We can identify time constant from our data. After one time constant the temperature has changed by 63\%, after 4 time constants the temperature has changed by 98\%.
+
+  1 time constant,
+
+  \[
+      T(0) - 0.63\Delta T = 41.43 \Rightarrow \tau = 208s
+    .\]
+
+  4 time constants,
+
+  \[
+      T(0) - 0.98\Delta T = 27.78 \Rightarrow 4\tau = 832s
+    .\]
+
+  Sometimes they may be different, so you can take the average of the two. In this example it worked out. Finally,
+
+  \[
+      h = 35.4
+    .\]
+
+  We can check the lumped capacitance approximation too!
+
+  \[
+      Bi = \frac{hL_c}{k} = 1.8 \times 10^{-4} < 0.1
+    .\]
+
+  Great assumption!
+
+  \section{Two-Tank Fluid System}
+
+  
 
 
 

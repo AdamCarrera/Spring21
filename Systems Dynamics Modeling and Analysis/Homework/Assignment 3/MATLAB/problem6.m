@@ -1,3 +1,4 @@
+% Define blocks
 E = tf(6, [1 0]);
 M = tf(1, [4 1]);
 G = tf(1, [3 2]);

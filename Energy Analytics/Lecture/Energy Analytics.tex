@@ -660,4 +660,134 @@
 
 
 
+
+
+  \chapter{Regression}
+
+  For the homework, only one year of site B data has been given. You will need to compare the accuracy of your MCP methods based on the data. You can use 11 months for correlation and the rest of the months for validation. Review MCP slides on training and validation.
+
+  The book has some helpful material! Chapter 5: Time series regression methods.
+
+  \section{Correlation}
+
+  Correlation coefficients are used to measure the strength of the relationship between two variables.
+
+  \begin{equation}
+    r = \frac{\sum (x_t - \bar x)(y_t - \bar y)}{\sqrt{\sum (x_t - \bar x)^2(y_t - \bar y)^2}}
+  \end{equation}
+
+  xt is the value at the time, x bar is the mean value of the data. R will lie in between -1 and 1, where a value of 1 indicates perfect positive correlation. Note that correlation values can have many different visual representations. Y should be a function of some variable that has a higher correlation coefficient with the target variable
+
+  \subsection{Autocorrelation}
+
+  Autocorrelation measures the linear relationship between lagged values of a time series. The correlation coefficient is calculated for different amounts of time delay. This is important for forcasting future events. If the historic data has a high correlation with the future event, it will be easier for you to make an accurate forcast.
+
+  \section{Time Series Regression Models}
+
+  Basically, we forecast the time series of interest y, assuming that it has a linear relationship with other time series x. The forecsat variable y is sometimes also called the regressand, dependent, or explained variable. The predictor variables x are someteiems called the regressors, independent or explanatory variables.
+
+  \subsection{Linear Model}
+
+  Simplest case is the linear relationship.
+
+  \begin{equation}
+    y_t = \beta_0 + \beta_1 x_t + \epsilon_t
+  \end{equation}
+
+  $ \beta_0, \beta_1 $ are the intercept and slope of the line. Epsilon is the error.
+
+  Note,
+
+  \[
+      \beta_0 + \beta_1 x_t \equiv \hat y
+    .\]
+
+  Plot the points, draw the line!
+
+  \subsection{Multiple linear regression}
+
+  Two or more predictor variables.
+
+  \begin{equation}
+    y_t = \beta_0 + \beta_1 x_{1,t} + \beta_2 x_{2,t} + \ldots + \beta_k  x_{k,t} + \epsilon_t
+  \end{equation}
+
+  Each predictor varaible must be a numerical value. Each coefficient measures the effect of each predictor after taking into account the effects of all the other predictors in the model. Thus, the coefficients measrue the marginal effects of the predictor variables.
+
+  \section{Data Fitting}
+
+  Data fitting is the process of constructing a mathematical function to fit to a series of data points. Data poitns can be experiment results, simulation results, or observations of phenomena. There are many methods for dta fitting. The least-squares appraoch, which requires the use of optimization is introduced here.
+
+  \subsection{Least squares estimation}
+
+  We need to estimate $ \beta $ coefficients. Least squares helps us choose those by minimizing the sum of the squared errors. Lots of machine learning problems use this.
+
+  \begin{equation}
+    \min \sum_{t=1}^T \epsilon_t^2 = \min \sum_{t=1}^T (y_t - \beta_0 - \beta_1 x_{1,t} - \beta_2 x_{2,t} - \ldots - \beta_k  x_{k,t})^2
+  \end{equation}
+
+  \subsection{Mathematical Example}
+
+  In most cases we will not be able to find all of our unknowns to solve the system of equations. Can even have millions of design variables. Least squares can be used to solve these types of problems! The curve will be very close to all of the points, but will not have all of them.
+
+  \section{Goodness of fit}
+
+  To test how well the linear regression model fits, we find the coefficient of determination.
+
+  \begin{equation}
+    R^2 = \frac{\sum (\hat y_t - \bar y)^2}{\sum(y_t - \bar y)^2}
+  \end{equation}
+
+  $ R^2 $ will lie in between 0 and 1. If the predictions are close to the actual values, we would expect $ R^2 $ to be close to 1.
+
+  \section{Nonlinear Regression}
+
+  Linear regression is used alot, but in practice most problems are non-linear. The simplest way of modeling a nonlinear relationship is to transform the forecast variable y and/or the predictor variable x before estimating a regression model. While this provides a non-linear functional form, the model is still linear in the parameters. THe most commonly used transformation is the natural logarithm.
+
+  A log-log functional form is specified as,
+
+  \begin{equation}
+    \log y = \beta_0 + \beta_1 \log x + \epsilon
+  \end{equation}
+
+  \section{Support Vector Regression}
+
+  Surrogate modeling is concerned with the construction of approximation models to estimate the system performance and to develop relationships between specific inputs and outputs.
+
+  SVR is a regression method to construct smooth, nonlinear, regression approximations by formulating the surrogate model construction probelm as a quadratic programming problem.
+
+  \subsection{Radial Basis Function}
+
+  Expresses surrogate models as linear combinations of aparticular type of bassi function $ \psi(r). $ Each constituent bassi function is defined in terms of the Euclidean distance (r) between a training point and the poitn of evaluation. (r) can be expressed as
+
+  \begin{equation}
+    r = ||x - x_i||
+  \end{equation}
+
+  x is the point of evaluation, $ x_i $ is the ith training point. The RBF model is then expressed as a linear combination of the basis functions across all training points.
+
+  \begin{equation}
+    \tilde h(x) = \sum_{i=1}^{m}\omega_i \psi \left( ||x - x_i|| \right)
+  \end{equation}
+
+  $ \omega_i $ are the generic weights of the basis functions which are determined by training. $ \Psi $ is a matrix of the basis function values at the training poitns. and $ W $ is a vector containing the weights. $ Y $ is a vector of the function values at the training points. The weights $ \omega_i $ are found by solving.
+
+  \begin{equation}
+    \Psi W = Y
+  \end{equation}
+
+  RBFs are essentially interpolating functions. A trained RBF model will pass through all the training points.
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
