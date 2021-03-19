@@ -1581,7 +1581,160 @@
 
   \section{Two-Tank Fluid System}
 
-  
+
+
+
+
+  \part{Week 6}
+
+  \chapter{Mechanical Systems}
+
+  Mechanical systems are often very complicated to model exactly. So we use simplifying assumptions to reduce system to an idealized model of interconnected elements.
+
+  \section{Mechanical System Modeling}
+
+  Physical laws
+  \begin{itemize}
+    \item Newtons law
+    \item Conservation of energy
+  \end{itemize}
+
+  Three classes of elements
+  \begin{itemize}
+    \item Accel - Mass
+    \item Displacement - Spring
+    \item Velocity - Damper
+  \end{itemize}
+
+  \subsection{Mass Elements - Translational}
+
+  Acceleration, Velocity and Position
+
+  \[
+      a = \frac{dv}{dt} = \frac{d^2x}{d^2t}, \quad a = \dot v = \ddot x
+    .\]
+
+  Newton's second law, the force is in newtons, the mass is in kilograms and the acceleration is in $ m/s^2. $ Note that acceleration is an absolution quantity and must be measured w.r.t an inertial reference frame. An interital reference frame is a frame of reference in which objects are at rest or move with constant velocity when the net force acting upon them is zero. The ground is typically a good reference frame.
+
+  \begin{equation}
+    f = \frac{d}{dt}(mv) = m \frac{dv}{dt} = ma
+  \end{equation}
+
+
+  \subsection{Advanced Concepts}
+  Inertial reference frame:
+  \[
+      \sum f = m \frac{d^2}{dt^2}(x + y) = m (\ddot x + \ddot y)
+    .\]
+
+  Time-varying mass
+
+  \[
+      f = \frac{d}{dt} (m(t)v(t)) = \dot m(t) \dot x(t) + m(t) \ddot x(t)
+    .\]
+
+
+
+  \section{Mass Elements - Rotational}
+
+  Angular acceleration, velocity, and position
+
+  \begin{equation}
+    \alpha = \frac{d \omega}{dt} = \frac{d^2 \theta}{dx^2}, \quad \alpha = \dot \omega = \ddot \theta
+  \end{equation}
+
+  Newton's second law
+
+  \begin{equation}
+    \tau = I_o \alpha
+  \end{equation}
+
+  Torque is in Nm, mass moment of intertia about O is kg $m^2$, angular acceleration $rad/s^2$. \textbf{We are assuming the mass is evenly distributed throughout the object.}
+
+  \section{Spring Elements - Translational}
+
+  The free length of the spring is $ x_0. $ The Deflection, $ x $ is caused by force $ f. $ Deflection is measured relative to free length.
+
+  Hooke's law
+
+  \begin{equation}
+    f = kx
+  \end{equation}
+
+  In general, both ends of our spring will be moving. Two forces and two deflections. We are assuming that $ x_2 > x_1 > 0. $
+
+  \[
+      f = k (x_2 - x_1) = kx_{rel}, \quad x_{rel} = x_2 - x_1
+    .\]
+
+  \section{Spring Elements - Rotational}
+
+  Angular deflection caused by torque. Hooke's law,
+
+  \begin{equation}
+    \tau = K\theta
+  \end{equation}
+
+  We are assuming that $ \theta_2 > \theta_1 > 0. $
+
+  \section{Damper Elements}
+
+  Friction caused by liquid is called viscous damping. The damping force is opposite to the direction of motion.
+
+  \subsection{Translational}
+
+  Linear relationship (approximating complex relationships)
+
+  \begin{equation}
+    f = bv
+  \end{equation}
+
+  $ b $ is in Ns/m, velocity is in m/s. Other texts use $ c $ in place of $ b. $
+
+  \subsection{Rotational}
+
+  \begin{equation}
+    \tau = B \omega
+  \end{equation}
+
+  Assume that $ \omega_2 > \omega_1 > 0. $
+
+  \section{Friction}
+
+  Types of friction
+
+  \begin{itemize}
+    \item Viscous - $ f = bv. $
+    \item Coulomb - $ f = \mu v. $
+    \item Structural - Hysteresis energy loss during stress cycling
+  \end{itemize}
+
+  \section{Parallel and Series Equivalence}
+
+  Springs,
+
+  \begin{itemize}
+    \item Parallel - $ k_{eq} = k_1 + k_2. $
+    \item Series - $ k_{eq}^{-1} = k_1^{-1} + k_2^{-1} $
+  \end{itemize}
+
+  Dampers have the same relationships
+
+  \section{Degrees of Freedom}
+
+  \begin{itemize}
+    \item Number of equations of motion is determined by number of degrees of freedom
+    \item Number of degrees of freedom = number of generalized coordinates
+    \item Generalized coordinates describe the current configuration of a system relative to some reference configuration.
+    \item "generalized" - opposed to cartesian, allows us to use theta
+  \end{itemize}
+
+
+
+
+
+
+
 
 
 

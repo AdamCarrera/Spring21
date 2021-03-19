@@ -321,12 +321,131 @@
   \end{equation}
 
   \begin{equation}
-    y = 
+    y =
     \begin{bmatrix}
       1 & 0 \\
       0 & 1
     \end{bmatrix}T
   \end{equation}
+
+  Listing 1 shows the matlab script used to find the steady state values as functions of the input variables.
+  \newpage
+  \lstinputlisting[style=Matlab-editor, caption = {Script for Problem 3, Steady state value as a function of input variable}]{MATLAB/problem3.m}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/problem3.png}
+    \caption{Output of Listing 1}
+    \label{}
+  \end{figure}
+  \newpage
+
+  \section{}
+
+  \subsection{Part A}
+
+  Given,
+
+  \[
+      r = 0.01m, \quad h = 350 W/m^2C, \quad \rho = 7850, \quad c_p = 440J/kgC
+    .\]
+
+  \[
+      k = 43W/m^2C, \quad T_f = 100C, \quad T_0 = 25C
+    .\]
+
+  Calculate Biot Criterion,
+
+  \begin{equation}
+    Bi = \frac{R_{cond}}{R_{conv}} = \frac{hL_c}{k}
+  \end{equation}
+
+  where,
+
+  \begin{equation}
+    L_c = \frac{V}{A} = \frac{r}{3} = 0.0033333
+  \end{equation}
+
+  The Biot Criterion is less than 0.1, therefore the temperature is spatially uniform.
+
+  \subsection{Part B}
+
+  Conservation of energy,
+
+  \begin{equation}
+    \frac{dU}{dt} = q_{in} - q_{out}
+  \end{equation}
+
+  where,
+
+  \begin{equation}
+    q_{in} = 0, \quad q_{out} = \frac{1}{R} (T - T_f), \quad \frac{dU}{dt} = \rho V c_p \dot T
+  \end{equation}
+
+  We can substitute these values to get the differential equation relating the temperature $ T $ to the temperature of the water $ T_f. $
+
+  \begin{equation}
+    mc_p \dot T = - \frac{1}{R} (T - T_f)
+  \end{equation}
+
+  which can be rewritten as,
+
+  \begin{equation}
+    R\rho V c_p \dot T + T = T_f
+  \end{equation}
+
+  \subsection{Part C}
+
+  The time constant $ \tau $ is equal to,
+
+  \begin{equation}
+    \tau = R\rho V c_p = \frac{\rho V c_p}{h A_s} = \frac{7850 \cdot 440}{350} \cdot \frac{0.01}{3} = 32.89s
+  \end{equation}
+
+  \subsection{Part D}
+
+  Treat the heating process as a step response. Take the laplace transform of both sides.
+
+  \begin{equation}
+    \frac{\rho V c_p}{h A_s} s T(s) + T(s) = \frac{T_f}{s}
+  \end{equation}
+
+  \begin{equation}
+    T(s) = \ddfrac{T_f}{s\left( \ddfrac{\rho V c_p}{hA_s}s + 1 \right)}
+  \end{equation}
+
+  \begin{equation}
+    T(s) = \frac{T_f}{s} - \frac{T_f}{s + \frac{hA_s}{\rho V c_p}}
+  \end{equation}
+
+  Take the inverse laplace transform
+
+  \begin{equation}
+    T(t) = T_f \left( 1 - e^{-\ddfrac{hA_s}{\rho V c_p}t} \right)
+  \end{equation}
+
+  \subsection{Part E}
+
+  The result obtained in part b is modeled in simulink. The block diagram is shown in Figure \ref{fig:simulink} and the scope output is shown in Figure \ref{fig:scope}. As expected, we can see the of the sphere rise to the temperature of the water.
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/simulink.png}
+    \caption{Block diagram of result obtained in part b}
+    \label{fig:simulink}
+  \end{figure}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/scopesnip}
+    \caption{Temperature as a function of time. Simulated for 164 seconds or 5 time constants.}
+    \label{fig:scope}
+  \end{figure}
+
+
+
+
+
 
 
 

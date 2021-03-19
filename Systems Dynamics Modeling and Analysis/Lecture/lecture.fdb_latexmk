@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1614277622 "lecture.tex" "lecture.pdf" "lecture" 1614277624
+["pdflatex"] 1615486594 "lecture.tex" "lecture.pdf" "lecture" 1615486595
   "c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1610494009 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1610494424 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1610494249 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -96,9 +96,9 @@
   "figures/inputoutput.pdf_tex" 1611181222 2629 70ae19395b84a6c0c986a28e10cbca05 ""
   "figures/scope1.png" 1612462148 7508 a46926d75df3c23eded145ce7b4488d8 ""
   "figures/subsystems.pdf_tex" 1611180872 3071 b3cb9bfb14217ba62e0076414908f8b3 ""
-  "lecture.aux" 1614277624 13637 15f28f0bb19700c93d896f3c734b789a "pdflatex"
-  "lecture.tex" 1614277622 43860 c5c155fcb9ddfdfa2dd4cbc726bc76d5 ""
+  "lecture.aux" 1615486595 15290 912c4a7e195e264d13222e41babef848 "pdflatex"
+  "lecture.tex" 1615486592 47891 7e734604e7e2f9121190091f0ed7a896 ""
   (generated)
-  "lecture.aux"
   "lecture.log"
+  "lecture.aux"
   "lecture.pdf"
